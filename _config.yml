@@ -9,22 +9,20 @@ truncate: 200 				# the number of words preview a post
 name: xiao			# site f
 author: 肖俊杰					# author
 url: https://xiaojunjie.github.io			# url 
-quote: quote 		# my quote
+description: 肖俊杰的博客 		# description
+keywords: 肖俊杰，西电，罗源
 
-# socailvxc xzxz xz xz z zx zd
+# socail
 email: 971308896@qq.com
 qq_id: 971308896
 sinaweibo_id: 15980725205
 github_username: xiaojunjie   	# github.com
-ilovematlab_id: 465970			# www.ilovematlab.cn
 zhihu: xiaojunjie
-segmentfault: xiaojunjie
+
 
 # plugin
 highlighter: rouge
-#duoshuo: herechen 				# duoshuo comments
-#jiathis: 1394036192262975		# jiathis share plugin 
-#analytics: UA-48539473-1 		# GoogleAnalytics
+
 
 
 # default
