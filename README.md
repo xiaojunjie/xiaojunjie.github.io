@@ -1,6 +1,6 @@
 ### About
 
-博客依靠 [Jekyll](http://jekyllrb.com/) 新建. 可以在这里预览 [http://xiaojunjie.github.io](http://herechen.github.io) .
+博客依靠 [Jekyll](http://jekyllrb.com/) 新建. 可以在这里预览 [http://xiaojunjie.github.io](http://xiaojunjie.github.io) .
 风格上参照了 <https://herechen.github.io> .
 
 ### Usage
