@@ -73,6 +73,14 @@ header,footer{
     word-wrap: break-word;
     word-break: normal; 
 
+    [class^="icon-"]{
+      color: $icon-color;
+      &:hover{
+        color:$link-color;
+        text-decoration: none;
+      }
+    }
+
     /*.main a:hover*/
     &:hover{
       color:$link-color;

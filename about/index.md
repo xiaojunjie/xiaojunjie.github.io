@@ -15,9 +15,10 @@ layout: default
 <div class="row">
     <div class="col-md-6">
         <h2>联系方式</h2>
-        <span>Email：<a href="mailto:{{ site.email }}" target="_blank">{{ site.email }}</a></span><br>
-        <span>Github：<a href="http://github.com/{{ site.github_username }}" target="_blank">{{ site.github_username }}</a></span><br>
-        <span>QQ: <a href="http://wpa.qq.com/msgrd?V=1&Uin={{ site.qq_id }}" title="QQ" target="_blank">971308896</a></span><br>
+        <span><i class="icon-mail-alt"></i>邮箱：<a href="mailto:{{ site.email }}" target="_blank">{{ site.email }}</a></span><br>
+        <span><i class="icon-github-circled"></i>Github：<a href="http://github.com/{{ site.github_username }}" target="_blank">{{ site.github_username }}</a></span><br>
+        <span><i class="icon-qq"></i>QQ: <a href="http://wpa.qq.com/msgrd?V=1&Uin={{ site.qq_id }}" title="QQ" target="_blank">971308896</a></span><br>
+        <span><i class="icon-wechat"></i>微信: <a href="#" title="wechat" target="_blank">xiao-jun-jie</a></span><br>
     </div>
     <div class="col-md-6">
         <h2>关于博客</h2>
