@@ -1,0 +1,10 @@
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+  pre{
+    > code{
+        overflow-wrap: break-word;
+    }
+  }
+}

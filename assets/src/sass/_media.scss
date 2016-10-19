@@ -1,0 +1,125 @@
+@mixin max-media-query($device) {
+    @media (max-width: $device) {
+        @content;
+    }
+}
+
+@mixin min-media-query($device) {
+    @media (min-width: $device) {
+        @content;
+    }
+}
+
+@mixin container($max-width) {
+  .container {
+    max-width: $max-width;
+  }
+}
+
+@mixin font-adapt($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+
+/*normal and large screen*/
+@include min-media-query($normal-screen){
+  /*@include container(960px);*/
+  .main {
+    @include font-adapt(1.2em, 1.8);
+    
+    & h1{
+        font-size: 30px;
+    }
+
+    & h2{
+        font-size: 24px;
+    }
+  }
+}
+
+/*normal screen*/
+@include max-media-query($normal-screen){
+  /*@include container(820px);*/
+  .main {
+    @include font-adapt(1.2em, 1.8);
+    
+    & .article{
+      padding-left: 25px;
+    }
+
+    & h1{
+        font-size: 30px;
+    }
+
+    & h2{
+        font-size: 24px;
+    }
+  }
+
+}
+
+/*small+*/
+@include min-media-query($small-screen){
+
+  .main {
+    padding-top: $spacing-unit*2;
+    
+    & .article{
+      padding-left: 25px;
+    }
+
+    & h1{
+        font-size: 30px;
+    }
+
+    & h2{
+        font-size: 24px;
+    }
+  }
+
+}
+
+/*small screen*/
+@include max-media-query($small-screen) {
+
+  .main {
+    padding-top: $spacing-unit;
+    .anchorjs-link{
+      display: none;
+    }
+    @include font-adapt(1.1em, 1.5);
+
+    & .article{
+        padding-left: 0px;
+        &:before{
+          display: none;
+        }
+    }
+
+    & h1{
+        font-size: 30px;
+    }
+
+    & h2{
+        font-size: 24px;
+    }
+
+  }
+
+  .backtotop{
+    display: none;
+  }
+
+}
+
+@media (min-width:992px) {
+    .post-nav {
+        width: 213px
+    }
+}
+@media (min-width:1200px) {
+    .post-nav {
+        width: 263px
+    }
+}

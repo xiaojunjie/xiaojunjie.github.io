@@ -1,0 +1,45 @@
+# site
+markdown: kramdown 				# markdown parser(or rdiscount)
+permalink: /:categories/:title/	            # change default url			
+safe: true         				# safe mode
+# paginate: 50					# number of posts on homepage
+truncate: 200 				# the number of words preview a post
+
+# peronal
+name: xiao			# site f
+author: 肖俊杰					# author
+url: https://xiaojunjie.github.io			# url 
+quote: quote 		# my quote
+
+# socailvxc xzxz xz xz z zx zd
+email: 971308896@qq.com
+qq_id: 971308896
+sinaweibo_id: 15980725205
+github_username: xiaojunjie   	# github.com
+ilovematlab_id: 465970			# www.ilovematlab.cn
+zhihu: xiaojunjie
+segmentfault: xiaojunjie
+
+# plugin
+highlighter: rouge
+#duoshuo: herechen 				# duoshuo comments
+#jiathis: 1394036192262975		# jiathis share plugin 
+#analytics: UA-48539473-1 		# GoogleAnalytics
+
+
+# default
+defaults:
+  -
+    scope:
+      path: "" # 一个空的字符串代表项目中所有的文件
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude: [node_modules]
+
+# backup
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+layouts_dir:     ./_layouts
+destination: ./_site
+encoding:     "utf-8"

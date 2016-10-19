@@ -1,0 +1,20 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<!-- I do not know nothing. -->
+<html lang="zh-CN">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <div class="main">
+      <div class="container {{ page.class }}" role="main">
+        {{ content }}
+      </div>
+    </div>
+    {% include footer.html %}
+    <script src="//apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="/assets/dist/js/main.min.js?v=1.4"></script>
+  </body>
+</html>
