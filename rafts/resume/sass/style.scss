@@ -1,0 +1,159 @@
+$tp-color :#ff7200;
+aside {
+    position: fixed;
+    right: 0;
+    top: 30%;
+    z-index: 2;
+}
+
+aside li {
+    margin-bottom: 10px;
+    border-radius: 10px 0 0 10px;
+    background: $tp-color;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+aside a {
+    color: #fff;
+    display: inline-block;
+    width: 80px;
+    line-height: 38px;
+    padding-left: 10px;
+}
+
+.container {
+    position: relative;
+    margin: 10px auto;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    width: 1060px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.main {
+    position: relative;
+    padding: 15px 20px;
+    background: #f0f2f1;
+     a {
+        color: #616161;
+        padding-left: 5px;
+    }
+}
+
+.main-info {
+    > li {
+        padding-top: 20px;
+        &:after{
+            content: '';
+            height: 0;
+            clear: both;
+            display: block
+        }
+    }
+    dt {
+        font-size: 24px;
+        color: $tp-color;
+        line-height: 30px;
+        border-bottom: 1px solid $tp-color;
+        margin: 0 0 15px -5px;
+    }
+    dd {
+        font-size: 15px;
+        line-height: 27px;
+        color: #616161;
+    }
+    span {
+        display: inline-block;
+        width: 75px;
+        color: #000;
+        font-size: 16px;
+    }
+}
+ 
+
+.basic-info {
+    dd {
+        margin-left: 50px;
+    }
+    .title {
+        float: left;
+        width: 250px;
+        /*margin: 25px 0 20px;*/
+        text-align: center;
+        img {
+            display: block;
+            margin: 0 auto 15px;
+            width: 120px;
+        }
+    }
+    .study-info {
+        float: left;
+    }
+    .contact-info {
+        float: left;
+        dd:hover,a:hover{
+            color:#000;
+        }
+    }
+}
+
+.experience {
+    p {
+        text-indent: 2em;
+    }
+}
+
+
+
+.circle {
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+    background: $tp-color;
+}
+
+.wrap {
+    width: 46%;
+    float: left;
+}
+.exp {
+    float: left;
+    border-left: 2px solid $tp-color;
+    margin-left: 15px;
+    display: inline-block;
+    p {
+        font-size: 15px;
+        color: #616161;
+        line-height: 22px;
+        margin-bottom: 3px;
+        
+    }
+     > li {
+        position: relative;
+        top: -5px;
+        margin: 0 0 20px 20px;
+    }
+    img {
+        width: 200px;
+    }
+    ul > li {
+        margin: 0 0 12px 0;
+    }
+}
+
+
+
+
+
+
+
+footer {
+    margin: 30px 0 20px;
+     p {
+        text-align: center;
+        color: #616161;
+        font-size: 14px;
+    }
+}

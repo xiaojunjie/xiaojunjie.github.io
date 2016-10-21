@@ -6,7 +6,8 @@ class: links
 
 ## 友情链接
 
-[布拉格](http://besideme.github.io/)
-[UnkelTao](http://www.unkeltao.com/)
-[CevinJohnny](http://www.cevinjohnny.top/)
-[雪之苑林](http://xuezhiyuanlin.github.io/)
+[西电信息安全协会](//www.xdsec.club)
+[西电ACM](//acm.xidian.edu.cn/)
+
+## 书签
+

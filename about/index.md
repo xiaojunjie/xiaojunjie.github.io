@@ -10,7 +10,7 @@ layout: default
 <div class="img-responsive img-circle hedcut"></div>
 
 <center>肖俊杰，爱好编程，未婚。</center>
-<center>本科信息安全，会点黑科技，但不是黑客~</center>
+<center>本科信息安全，会点黑科技，不是黑客~</center>
 
 <div class="row">
     <div class="col-md-6">
