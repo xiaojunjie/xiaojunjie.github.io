@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 盗取校园网帐号
-categories: 雕虫小技
-tags: 盗号
+categories: demos
+tags: 雕虫小技
 ---
 
 ##生日攻击

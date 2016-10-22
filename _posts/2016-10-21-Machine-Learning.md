@@ -1,12 +1,11 @@
 ---
-<!-- date: 2016-10-19 14:08:04 -->
 layout: post
 title: 机器学习
-categories: 笔记
+categories: note
 tags: coursera
 ---
 
-[斯坦福大学公开课](//coursera.org/learn/machine-learning)，笔记内容只能保证我能看的懂，请不要往下看。
+[斯坦福大学公开课](//coursera.org/learn/machine-learning)
 
 ##介绍
 
