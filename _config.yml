@@ -6,7 +6,7 @@ safe: true         				# safe mode
 truncate: 200 				# the number of words preview a post
 
 # peronal
-name: xiao			# site f
+name: Shaw			# site f
 author: 肖俊杰					# author
 url: https://xiaojunjie.github.io			# url 
 description: 肖俊杰的博客 		# description
