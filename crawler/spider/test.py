@@ -5,7 +5,8 @@ url = {
 	"git": "../../",
 	"rs": "http://rs.xidian.edu.cn/forum.php?mod=forumdisplay&fid=106",
 	"data": "_data/rs.yml",
-	"temp": "img_template.txt"
+	"temp": "img_template.txt",
+	"log" : "git.log"
 }
 
 temp = open(url["temp"],"r")
@@ -27,10 +28,15 @@ finally:
 dat.close()
 temp.close()
 shell = [
-	"sudo git add .",
-	"sudo git commit -m 'send from my crawler' ",
+	"git add .",
+	"git commit -m 'send from my crawler' ",
+	"git pull",
+	"git merge",
 	"git push "
 ]
+shellout = ""
 for i in shell:
-	str = os.system(i)
-	print(str)
+	shellout += os.popen(i).read()
+log = open(url["log"],"a+")
+log.write(shellout)
+log.close()
