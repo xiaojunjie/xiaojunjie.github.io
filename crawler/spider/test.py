@@ -37,8 +37,8 @@ shell = [
 ]
 
 log = open(url["log"],"a+")
-log.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+log.write("\r\n-------------------\r\n")
+log.write(time.strftime("%Y-%m-%d %H:%M:%S\r\n", time.localtime()))
 for i in shell:
 	log.write(os.popen(i).read())
-log.write("\r\n\r\n-------------------")
 log.close()
