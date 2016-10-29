@@ -34,7 +34,7 @@ def git():
 	gitResult=""
 	for i in shell:
 		gitResult += os.popen(i).read()
-		# time.sleep( 5 )
+		time.sleep( 10 )
 	outlog(gitResult)
 
 def imgFetch(host,src):
