@@ -27,10 +27,10 @@ finally:
 dat.close()
 temp.close()
 shell = [
-	"sudo git -C %s add .",
-	"sudo git -C %s commit -m 'send from my crawler' ",
-	"sudo git -C %s push "
+	"sudo git add .",
+	"sudo git commit -m 'send from my crawler' ",
+	"sudo git push "
 ]
 for i in shell:
-	str = os.system(i % url["git"])
+	str = os.system(i)
 	print(str)
