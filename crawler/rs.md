@@ -2,6 +2,7 @@
 title: 睿思
 layout: default
 ---
+
 <div class="module cl ml">
 <ul>
 {% for img in site.data.rs limit:15 offset:3 %}
