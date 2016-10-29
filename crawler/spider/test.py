@@ -10,7 +10,7 @@ url = {
 	"data": "_data/rs.yml",
 	"temp": "img_template.txt",
 	"log" : "git.log",
-	"img" : "../img/"
+	"storage" : "../storage/"
 }
 
 
@@ -30,7 +30,8 @@ def git():
 	outlog(gitResult)
 
 def imgFetch(host,src):
-	urlretrieve(host+src, url["img"]+src)
+	os.mkdir(host+src)
+	urlretrieve(host+src, url["storage"]+src)
 
 def outlog(txt):
 	log  = open(url["log"],"a+")
