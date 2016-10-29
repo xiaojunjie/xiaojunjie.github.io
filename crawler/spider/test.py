@@ -29,7 +29,7 @@ temp.close()
 shell = [
 	"sudo git add .",
 	"sudo git commit -m 'send from my crawler' ",
-	"sudo git push "
+	"git push "
 ]
 for i in shell:
 	str = os.system(i)
