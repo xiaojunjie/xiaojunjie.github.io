@@ -34,7 +34,7 @@ def git():
 	gitResult=""
 	for i in shell:
 		gitResult += os.popen(i).read()
-		time.sleep( 5 )
+		# time.sleep( 5 )
 	outlog(gitResult)
 
 def imgFetch(host,src):
@@ -57,6 +57,7 @@ def outdata(html):
 	yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
 	for img in bsObj.findAll("img"):
+		   img["alt"] = img["alt"].replace('[','')
 		   'href' in img.parent.attrs \
 		and img["src"]!="" \
 		and img["alt"]!="" \
