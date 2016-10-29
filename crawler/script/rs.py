@@ -1,3 +1,4 @@
+#-*-coding:utf-8-*-
 from urllib.request import urlopen
 from urllib.request import urlretrieve
 from threading import Timer  
@@ -33,12 +34,16 @@ def git():
 	gitResult=""
 	for i in shell:
 		gitResult += os.popen(i).read()
+		time.sleep( 5 )
 	outlog(gitResult)
 
 def imgFetch(host,src):
-	imgDirname = os.path.dirname(url["storage"]+src)
-	os.path.exists(imgDirname) or os.makedirs(imgDirname)
-	urlretrieve(host+src, url["storage"]+src)
+	localFile  = url["storage"]+src
+	originFile = host+src
+	localPath  = os.path.dirname( localFile )
+	os.path.exists( localPath ) or os.makedirs( localPath )
+	os.path.isfile( localFile ) or urlretrieve( originFile, localFile )
+	return True
 
 def outlog(txt):
 	log  = open(url["log"],"a+")
@@ -52,9 +57,11 @@ def outdata(html):
 	yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
 	for img in bsObj.findAll("img"):
-		if 'href' in img.parent.attrs and img["src"]!="" and img["alt"]!="":
-			imgFetch( url["host"],img["src"] )
-			dat.write(yml % (img["alt"],url["cloud"]+img["src"],img.parent.attrs['href']))
+		   'href' in img.parent.attrs \
+		and img["src"]!="" \
+		and img["alt"]!="" \
+		and	imgFetch( url["host"],img["src"] ) \
+		and	dat.write(yml % (img["alt"],url["cloud"]+img["src"],img.parent.attrs['href']))
 	dat.close() 
 	temp.close()
  
@@ -69,9 +76,9 @@ def run():
 	finally:
 		git()
 
-  
-for i in range(1,12*24*3):
-	Timer(60*i, run ).start()   
+run()  
+# for i in range(1,12*24*3):
+	# Timer(60*i, run ).start()   
 
 
 
