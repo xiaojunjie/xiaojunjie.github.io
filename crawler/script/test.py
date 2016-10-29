@@ -59,7 +59,7 @@ def outdata(html):
 try:
 	html = urlopen(url['host']+url['forum'])
 except Exception as e:
-	outlog(e)
+	outlog(str(e))
 else:
 	outdata(html.read())
 finally:

@@ -56,3 +56,17 @@ Already up-to-date.
 
 
 ----2016-10-29 12:58:21-------
+
+
+----2016-10-29 13:01:55-------
+[master 908872b] send from my crawler
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+Already up-to-date.
+Already up-to-date.
+
+
+----2016-10-29 13:01:46-------
+
+
+----2016-10-29 13:02:45-------
+<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:645)>
