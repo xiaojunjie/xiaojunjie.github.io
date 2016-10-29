@@ -1,11 +1,15 @@
 from urllib.request import urlopen
 from urllib.request import urlretrieve
+from threading import Timer  
 from bs4 import BeautifulSoup
 import os
 import time
-import re
+import re 
+
+  
+
 url = {
-	"host": "https://kyfw.12306.cn/otn/leftTicket/init",
+	"host": "http://rs.xidian.edu.cn/",
 	"git": "../../",
 	"forum": "forum.php?mod=forumdisplay&fid=106",
 	"data": "_data/rs.yml",
@@ -53,17 +57,21 @@ def outdata(html):
 			dat.write(yml % (img["alt"],url["cloud"]+img["src"],img.parent.attrs['href']))
 	dat.close() 
 	temp.close()
+ 
+  
+def run():
+	try:
+		html = urlopen(url['host']+url['forum'])
+	except Exception as e:
+		outlog(str(e))
+	else:
+		outdata(html.read())
+	finally:
+		git()
 
-
-
-try:
-	html = urlopen(url['host']+url['forum'])
-except Exception as e:
-	outlog(str(e))
-else:
-	outdata(html.read())
-finally:
-	git()
+  
+for i in range(1,12*24*3):
+	Timer(60*i, run ).start()   
 
 
 
