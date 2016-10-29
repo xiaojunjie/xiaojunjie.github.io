@@ -25,11 +25,11 @@ url = {
 
 def git():
 	shell = [
-		"git add .",
-		"git commit -m 'send from my crawler' ",
-		"git pull",
-		"git merge",
-		"git push "
+		"git -C ../ add .",
+		"git -C ../ commit -m 'send from my crawler' ",
+		"git -C ../ pull",
+		"git -C ../ merge",
+		"git -C ../ push "
 	]
 	gitResult=""
 	for i in shell:
@@ -77,9 +77,9 @@ def run():
 	finally:
 		git()
 
-# run()  
-for i in range(0,12*24*3):
-	Timer(300*i, run ).start()   
+run()  
+# for i in range(0,12*24*3):
+# 	Timer(300*i, run ).start()   
 
 
 
