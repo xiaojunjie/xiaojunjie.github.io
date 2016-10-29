@@ -1,6 +1,7 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import os
+import time
 url = {
 	"git": "../../",
 	"rs": "http://rs.xidian.edu.cn/forum.php?mod=forumdisplay&fid=106",
@@ -34,9 +35,10 @@ shell = [
 	"git merge",
 	"git push "
 ]
-shellout = ""
-for i in shell:
-	shellout += os.popen(i).read()
+
 log = open(url["log"],"a+")
-log.write(shellout)
+log.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+for i in shell:
+	log.write(os.popen(i).read())
+log.write("\r\n\r\n-------------------")
 log.close()
