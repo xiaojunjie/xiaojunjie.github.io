@@ -10,13 +10,32 @@ url = {
 	"log" : "git.log"
 }
 
+dat  = open(url["git"]+url["data"],"w+") 
 temp = open(url["temp"],"r")
 yml  = str(temp.read())+"\r\n\r\n"
-dat  = open(url["git"]+url["data"],"w+") 
+
+def git():
+	shell = [
+		"git add .",
+		"git commit -m 'send from my crawler' ",
+		"git pull",
+		"git merge",
+		"git push "
+	]
+	gitResult=""
+	for i in shell:
+		gitResult += os.popen(i).read()
+	outlog(gitResult)
+
+def outlog(txt):
+	log  = open(url["log"],"a+")
+	log.write(time.strftime("\r\n-------%Y-%m-%d %H:%M:%S-----------\r\n", time.localtime()))
+	log.close()
+	
 try:
 	html = urlopen(url['rs'])
 except Exception as e:
-	print(e)
+	outlog(e)
 else:
 	bsObj = BeautifulSoup(html.read(),"lxml")
 	# print(bsObj.findAll(id="portal_block_343"));
@@ -24,21 +43,9 @@ else:
 		if 'href' in img.parent.attrs and img["src"]!="" and img["alt"]!="":
 			dat.write(yml % (img["alt"],img["src"],img.parent.attrs['href']))
 finally:
-	pass
+	git()
 
 dat.close()
 temp.close()
-shell = [
-	"git add .",
-	"git commit -m 'send from my crawler' ",
-	"git pull",
-	"git merge",
-	"git push "
-]
 
-log = open(url["log"],"a+")
-log.write("\r\n-------------------\r\n")
-log.write(time.strftime("%Y-%m-%d %H:%M:%S\r\n", time.localtime()))
-for i in shell:
-	log.write(os.popen(i).read())
-log.close()
+
