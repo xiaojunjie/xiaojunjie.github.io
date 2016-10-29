@@ -12,7 +12,7 @@ url = {
 	"temp": "img_template.txt",
 	"log" : "git.log",
 	"storage" : "../storage/",
-	"cloud" :"/crawler/storage"
+	"cloud" :"/crawler/storage/"
 }
 
 
