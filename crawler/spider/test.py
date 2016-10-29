@@ -11,7 +11,8 @@ url = {
 	"data": "_data/rs.yml",
 	"temp": "img_template.txt",
 	"log" : "git.log",
-	"storage" : "../storage/"
+	"storage" : "../storage/",
+	"cloud" :"/crawler/storage"
 }
 
 
@@ -49,7 +50,7 @@ def outdata(html):
 	for img in bsObj.findAll("img"):
 		if 'href' in img.parent.attrs and img["src"]!="" and img["alt"]!="":
 			imgFetch( url["host"],img["src"] )
-			dat.write(yml % (img["alt"],img["src"],img.parent.attrs['href']))
+			dat.write(yml % (img["alt"],url["cloud"]+img["src"],img.parent.attrs['href']))
 	dat.close() 
 	temp.close()
 
