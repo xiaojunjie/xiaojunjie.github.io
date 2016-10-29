@@ -5,7 +5,7 @@ import os
 import time
 import re
 url = {
-	"host": "http://rss.xidian.edu.cn/",
+	"host": "https://kyfw.12306.cn/otn/leftTicket/init",
 	"git": "../../",
 	"forum": "forum.php?mod=forumdisplay&fid=106",
 	"data": "_data/rs.yml",

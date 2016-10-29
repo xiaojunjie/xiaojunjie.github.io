@@ -43,3 +43,16 @@ Already up-to-date.
  1 file changed, 1 insertion(+), 1 deletion(-)
 Already up-to-date.
 Already up-to-date.
+
+
+----2016-10-29 12:58:29-------
+[master 6a8d7dc] send from my crawler
+ 3 files changed, 119 insertions(+)
+ create mode 100644 crawler/script/git.log
+ create mode 100644 crawler/script/img_template.txt
+ create mode 100644 crawler/script/test.py
+Already up-to-date.
+Already up-to-date.
+
+
+----2016-10-29 12:58:21-------
