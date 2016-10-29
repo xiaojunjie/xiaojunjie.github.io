@@ -77,9 +77,9 @@ def run():
 	finally:
 		git()
 
-run()  
-# for i in range(1,12*24*3):
-# 	Timer(60*i, run ).start()   
+# run()  
+for i in range(0,12*24*3):
+	Timer(300*i, run ).start()   
 
 
 
