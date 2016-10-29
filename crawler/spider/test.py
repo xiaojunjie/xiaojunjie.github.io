@@ -32,5 +32,5 @@ shell = [
 	"sudo git -C %s push "
 ]
 for i in shell:
-	str = os.popen(i % url["git"]).read()
+	str = os.system(i % url["git"])
 	print(str)
