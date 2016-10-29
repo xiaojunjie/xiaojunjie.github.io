@@ -57,7 +57,7 @@ def outdata(html):
 	yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
 	for img in bsObj.findAll("img"):
-		   img["alt"] = img["alt"].replace('[','')
+		   img["alt"] = img["alt"].replace('[','【')
 		   'href' in img.parent.attrs \
 		and img["src"]!="" \
 		and img["alt"]!="" \
@@ -79,7 +79,7 @@ def run():
 
 run()  
 # for i in range(1,12*24*3):
-	# Timer(60*i, run ).start()   
+# 	Timer(60*i, run ).start()   
 
 
 
