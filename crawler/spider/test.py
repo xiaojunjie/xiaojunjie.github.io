@@ -3,6 +3,7 @@ from urllib.request import urlretrieve
 from bs4 import BeautifulSoup
 import os
 import time
+import re
 url = {
 	"host": "http://rs.xidian.edu.cn/",
 	"git": "../../",
@@ -30,7 +31,8 @@ def git():
 	outlog(gitResult)
 
 def imgFetch(host,src):
-	os.mkdir(host+src)
+	imgDirname = os.path.dirname(url["storage"]+src)
+	os.path.exists(imgDirname) or os.makedirs(imgDirname)
 	urlretrieve(host+src, url["storage"]+src)
 
 def outlog(txt):
