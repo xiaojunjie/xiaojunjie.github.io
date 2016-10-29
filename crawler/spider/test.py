@@ -29,9 +29,10 @@ def git():
 
 def outlog(txt):
 	log  = open(url["log"],"a+")
-	log.write(time.strftime("\r\n-------%Y-%m-%d %H:%M:%S-----------\r\n", time.localtime()))
+	log.write(time.strftime("\r\n\r\n----%Y-%m-%d %H:%M:%S-------\r\n\r\n", time.localtime()))
+	log.write(txt)
 	log.close()
-	
+
 try:
 	html = urlopen(url['rs'])
 except Exception as e:
