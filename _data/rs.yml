@@ -10,6 +10,10 @@
   src: /crawler/storage/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
 
+- title: 出闲置自用pro5 32g一台
+  src: /crawler/storage/./data/attachment/forum/201610/30/114204ondzgmobnmdin2u5.jpg
+  link: forum.php?mod=viewthread&tid=821343
+
 - title: 红米note3高配版！ 3+32， 便宜出了啊！
   src: /crawler/storage/./data/attachment/block/be/bebc99a4d0e9650731ba742717e79aee.jpg
   link: forum.php?mod=viewthread&tid=821263
@@ -245,10 +249,6 @@
 - title: 奥马（Homa）92升 老校区慢出迷你小冰箱 单门冷藏小型家用电冰箱 BC-92（拉丝银）
   src: /crawler/storage/./data/attachment/block/b7/b74ab2d20b53b97e9a216b0d717bd914.jpg
   link: forum.php?mod=viewthread&tid=820292
-
-- title: 福利，研三学长，计算机相关书籍便宜卖啦。。
-  src: /crawler/storage/./data/attachment/block/95/9539081c635030598a9f8a05a02a2f1e.jpg
-  link: forum.php?mod=viewthread&tid=820245
 
 - title: 卖苹果啦，洛川出口的苹果！
   src: /crawler/storage/./data/attachment/block/ac/ac6bee72471be019394edd7d10b5687b.jpg
