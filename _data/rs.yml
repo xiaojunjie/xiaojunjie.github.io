@@ -10,6 +10,10 @@
   src: /crawler/storage/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
 
+- title: 单片机或树莓派各种模块！
+  src: /crawler/storage/./data/attachment/forum/201610/30/155359kfnf02sfuup3do72.jpg
+  link: forum.php?mod=viewthread&tid=821394
+
 - title: 转让17款捷安特830
   src: /crawler/storage/./data/attachment/block/46/4627851825c2263016142b15b4d61f27.jpg
   link: forum.php?mod=viewthread&tid=821364
@@ -245,10 +249,6 @@
 - title: 福利，更新。。。。研三学长，计算机相关书籍便宜卖啦。。
   src: /crawler/storage/./data/attachment/block/7b/7b42c2665c8d6f38f9eacbd23084d75f.jpg
   link: forum.php?mod=viewthread&tid=820311
-
-- title: 老校区转让kindle3一个
-  src: /crawler/storage/./data/attachment/block/82/8231d81caf218f649e137446b44aa6c3.jpg
-  link: forum.php?mod=viewthread&tid=820304
 
 - title: 卖苹果啦，洛川出口的苹果！
   src: /crawler/storage/./data/attachment/block/ac/ac6bee72471be019394edd7d10b5687b.jpg
