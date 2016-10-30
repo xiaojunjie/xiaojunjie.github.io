@@ -78,8 +78,8 @@ def run():
 		git()
 
 # run()  
-for i in range(0,12*24*3):
-	Timer(300*i, run ).start()   
+for i in range(0,12*24):
+	Timer(600*i, run ).start()   
 
 
 
