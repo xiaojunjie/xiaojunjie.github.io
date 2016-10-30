@@ -3,7 +3,7 @@
   link: ./
 
 - title: 广告代理区
-  src: /crawler/storage/static/image/common/forum.gif
+  src: /crawler/storage/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=546
 
 - title: 普通交易区
