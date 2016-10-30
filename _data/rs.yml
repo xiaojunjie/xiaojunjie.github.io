@@ -10,6 +10,10 @@
   src: /crawler/storage/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
 
+- title: 转让Magoosh账号
+  src: /crawler/storage/./data/attachment/forum/201610/30/191630jqcv7mcq1b7mzj7c.jpg
+  link: forum.php?mod=viewthread&tid=821429
+
 - title: iphone7 全新出售
   src: /crawler/storage/./data/attachment/block/df/dffb603f408a4769fadd3b818a8468a5.jpg
   link: forum.php?mod=viewthread&tid=821419
@@ -245,10 +249,6 @@
 - title: 出女式正装一套
   src: /crawler/storage/./data/attachment/block/fb/fbb6ebda825498f96e32c8f997fba6a6.jpg
   link: forum.php?mod=viewthread&tid=820319
-
-- title: 出电热锅，电磁炉+汤锅+炒锅
-  src: /crawler/storage/./data/attachment/block/24/24e7a925f214866e3bbef5b9063988b3.jpg
-  link: forum.php?mod=viewthread&tid=820317
 
 - title: 卖苹果啦，洛川出口的苹果！
   src: /crawler/storage/./data/attachment/block/ac/ac6bee72471be019394edd7d10b5687b.jpg
