@@ -3,12 +3,20 @@
   link: ./
 
 - title: 广告代理区
-  src: /crawler/storage/static/image/common/forum_new.gif
+  src: /crawler/storage/static/image/common/forum.gif
   link: forum.php?mod=forumdisplay&fid=546
 
 - title: 普通交易区
   src: /crawler/storage/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
+
+- title: 红米note3高配版！ 3+32， 便宜出了啊！
+  src: /crawler/storage/./data/attachment/block/be/bebc99a4d0e9650731ba742717e79aee.jpg
+  link: forum.php?mod=viewthread&tid=821263
+
+- title: 小米手机3 16G 移动版 星空灰 正常使用 200出手
+  src: /crawler/storage/./data/attachment/block/2d/2ddbf13ba4ef7c7c2c1d9ba06e88a39c.jpg
+  link: forum.php?mod=viewthread&tid=821248
 
 - title: 转一个98新的小米手环2
   src: /crawler/storage/./data/attachment/block/65/65368e0819b461d8ea24682fb95956ea.jpg
@@ -241,14 +249,6 @@
 - title: 福利，研三学长，计算机相关书籍便宜卖啦。。
   src: /crawler/storage/./data/attachment/block/95/9539081c635030598a9f8a05a02a2f1e.jpg
   link: forum.php?mod=viewthread&tid=820245
-
-- title: 出书第一波
-  src: /crawler/storage/./data/attachment/block/17/174b36d7a2c2085d8d63baba5ff18464.jpg
-  link: forum.php?mod=viewthread&tid=820226
-
-- title: 固态硬盘m.2，三星PM951 nvme 256g
-  src: /crawler/storage/./data/attachment/block/05/05a51ab5b872f550203e9d18c9b5233e.jpg
-  link: forum.php?mod=viewthread&tid=820169
 
 - title: 卖苹果啦，洛川出口的苹果！
   src: /crawler/storage/./data/attachment/block/ac/ac6bee72471be019394edd7d10b5687b.jpg
