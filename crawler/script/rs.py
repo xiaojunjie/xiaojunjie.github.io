@@ -79,7 +79,9 @@ def run():
 
 # run()  
 for i in range(0,12*24):
-	Timer(600*i, run ).start()   
+	run()
+	print("-------- %d" % i)
+	sleep(300)
 
 
 
