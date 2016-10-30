@@ -78,12 +78,5 @@ def run():
 		git()
 
 # run()  
-for i in range(0,12*24):
-	run()
-	print("-------- %d" % i)
-	sleep(300)
-
-
-
-
-
+for i in range(0,6*24):
+	Timer(600*i, run ).start()
