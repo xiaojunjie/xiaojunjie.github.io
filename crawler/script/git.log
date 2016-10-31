@@ -2,3 +2,14 @@
 
 ----2016-10-31 22:31:09-------
 <urlopen error [Errno -3] Temporary failure in name resolution>
+
+----2016-10-31 22:31:59-------
+[master 89466ab] send from my crawler
+ 2 files changed, 7 insertions(+), 1001 deletions(-)
+ rewrite crawler/script/git.log (99%)
+ create mode 100644 crawler/script/index.html
+Already up-to-date.
+
+
+----2016-10-31 22:41:09-------
+<urlopen error [Errno -3] Temporary failure in name resolution>
