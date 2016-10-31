@@ -961,3 +961,13 @@ Already up-to-date.
 [master 2d4b4bb] send from my crawler
  1 file changed, 6 insertions(+)
 Already up-to-date.
+
+
+----2016-10-30 23:22:01-------
+[master 4f8aac5] send from my crawler
+ 1 file changed, 6 insertions(+)
+Already up-to-date.
+
+
+----2016-10-31 21:51:09-------
+<urlopen error [Errno -3] Temporary failure in name resolution>
