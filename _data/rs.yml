@@ -10,6 +10,10 @@
   src: /crawler/storage/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
 
+- title: 出售《算法》《计算机操作系统》和《unxi环境高级编程（第二版）》
+  src: /crawler/storage/./data/attachment/forum/201610/31/222251po9t04qz59q4aesj.jpg
+  link: forum.php?mod=viewthread&tid=821713
+
 - title: 老校区 出 德运奶粉
   src: /crawler/storage/./data/attachment/block/69/69749964a5078daa36d2560f3f49675c.jpg
   link: forum.php?mod=viewthread&tid=821702
@@ -245,10 +249,6 @@
 - title: 学姐甩卖东西咯~~~
   src: /crawler/storage/./data/attachment/block/10/1068f41136a4af41f9f051d389b84394.jpg
   link: forum.php?mod=viewthread&tid=821002
-
-- title: 老家新鲜苹果直销，只为父母换点血汗钱。包邮哟！
-  src: /crawler/storage/./data/attachment/block/45/4598defac128bb80e4ecf4241353c175.jpg
-  link: forum.php?mod=viewthread&tid=820995
 
 - title: 好消息好消息 VIVO OPPO全系列手机好价卖啦 诚招校园代理
   src: /crawler/storage/./data/attachment/block/5f/5fe11c23c513ec882fffa54e76fdbe64.jpg
