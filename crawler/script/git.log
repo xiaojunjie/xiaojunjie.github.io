@@ -980,3 +980,13 @@ Already up-to-date.
 
 ----2016-10-31 22:01:09-------
 <urlopen error [Errno -3] Temporary failure in name resolution>
+
+----2016-10-31 22:01:59-------
+[master 2e1f341] send from my crawler
+ 2 files changed, 13 insertions(+)
+ create mode 100644 crawler/script/nohup.out
+Already up-to-date.
+
+
+----2016-10-31 22:11:09-------
+<urlopen error [Errno -3] Temporary failure in name resolution>
