@@ -43,3 +43,20 @@ else $0 -> %edx
 余%edx 商%eax
 
 - 控制  
+ [二进制数逆转](/note/csapp-3.23)  
+ [整数除法](/note/divid/)  
+
+- 函数调用
+
+![函数堆栈](/assets/dist/img/2016-11-01 16-45-37屏幕截图.png)  
+**父函数**  
+esp 指向参数1  
+call 返回地址（call下条指令的地址）入栈  esp指向返回地址 pc指向子函数代码区  
+**子函数**  
+push ebp  把ebp的原先值（调用者的帧指针）入栈，esp指向"被保存的ebp",ebp仍指向父函数帧  
+ebp = esp  ebp指向子函数帧  
+esp -= n   esp向前跳，这根据子函数而定，ebp不动  
+子函数代码  
+esp = ebp  ebp回跳  
+pop ebp  ebp指向父函数帧，esp指向“返回地址”  
+ret 返回地址出栈，pc指向call下条指令的地址。esp指向“参数1”
