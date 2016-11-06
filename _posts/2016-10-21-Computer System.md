@@ -47,7 +47,6 @@ else $0 -> %edx
  [整数除法](/note/divid/)  
 
 - 函数调用
-
 ![函数堆栈](/assets/dist/img/2016-11-01 16-45-37屏幕截图.png)  
 **父函数**  
 esp 指向参数1  
@@ -59,4 +58,13 @@ esp -= n   esp向前跳，这根据子函数而定，ebp不动
 子函数代码  
 esp = ebp  ebp回跳  
 pop ebp  ebp指向父函数帧，esp指向“返回地址”  
-ret 返回地址出栈，pc指向call下条指令的地址。esp指向“参数1”
+ret 返回地址出栈，pc指向call下条指令的地址。esp指向“参数1”  
+
+- 异质的数据结构  
+windows： double,long double 要求8字节对齐  
+linux： 8字节数据要求4字节对齐  
+
+- 缓冲区溢出  
+![函数堆栈](/assets/dist/img/2016-11-06 14-05-56屏幕截图.png)   
+buf过长会覆盖返回地址，植入shellcode使返回地址为shellcode的地址。因为栈的随机化，故要“空操作雪橇”使shellcode变长。  
+gcc的栈破坏检测会在buf前设置“金丝雀”，ret前检测，而其他局部变量移至buf后，使其一溢出就改动“金丝雀”
