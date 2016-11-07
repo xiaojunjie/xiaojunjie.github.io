@@ -24,8 +24,9 @@ url = {
 
 def swift():
 	shell = open(url["swiftKey"],"r").read().split("\n")
-	shell.append("swift upload storage "+url['storage']+" --object-name ruisi -c")
 	shell = " && ".join(shell)
+	shell+= "swift upload storage "+url['storage']+" --object-name ruisi -c"
+
 	print(shell)
 	swiftResult = os.popen(shell).read()
 	# for i in shell:
