@@ -23,7 +23,7 @@ url = {
 
 
 def swift():
-	shell = open(url["swiftKey"],"r").readlines()
+	shell = open(url["swiftKey"],"r").read().split("\r\n")
 	shell.append("swift upload storage "+url['storage']+" --object-name ruisi -c")
 	shell = " && ".join(shell)
 	print(shell)
