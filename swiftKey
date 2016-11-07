@@ -1,0 +1,3 @@
+export ST_AUTH='https://auth.sinas3.com/v1.0'
+export ST_USER='243l45wxn2'
+export ST_KEY='3kly0135iz4jwwm1kj5y1j55zm3j02jhjmz03jzh'

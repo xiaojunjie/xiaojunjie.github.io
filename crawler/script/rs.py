@@ -12,20 +12,22 @@ root = "../../"
 url = {
 	"host": "http://rs.xidian.edu.cn/",
 	"forum": "forum.php?mod=forumdisplay&fid=106",
-	"data": "_data/rs.yml",
+	"data": root+"_data/rs.yml",
 	"temp": "img_template.txt",
 	"log" : root+"log/ruisi.log",
 	"storage" : root+"storage/ruisi/",
-	"cloud" :"//static.xjjfly.com/ruisi/"
+	"cloud" :"//static.xjjfly.com/ruisi/",
+	"swiftKey": root+"swiftKey"
 }
 
 
 
 def swift():
+	os.popen("sh "+url["swiftKey"])
 	shell = [
 		"swift upload storage "+url['storage']+" --object-name ruisi -c"
 	]
-	swiftResult=""
+	swiftResult = ""
 	for i in shell:
 		swiftResult += os.popen(i).read()
 	outlog(swiftResult)
@@ -59,7 +61,7 @@ def outlog(txt):
 	log.close()
 
 def outdata(html):
-	dat  = open(url["root"]+url["data"],"w+")
+	dat  = open(url["data"],"w+")
 	temp = open(url["temp"],"r")
 	yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
