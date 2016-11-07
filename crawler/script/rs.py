@@ -24,9 +24,7 @@ url = {
 
 def swift():
 	shell = [
-		"cd ../../storage",
-		"swift upload storage ruisi -c",
-		"cd ../crawler/script"
+		"swift upload storage ../../storage/ruisi --object-name ruisi -c"
 	]
 	swiftResult=""
 	for i in shell:
