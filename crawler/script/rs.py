@@ -26,11 +26,7 @@ def swift():
 	shell = open(url["swiftKey"],"r").read().split("\n")
 	shell = " && ".join(shell)
 	shell+= "swift upload storage "+url['storage']+" --object-name ruisi -c"
-
-	print(shell)
 	swiftResult = os.popen(shell).read()
-	# for i in shell:
-	# 	swiftResult += os.popen(i).read()
 	outlog(swiftResult)
 
 def git():
