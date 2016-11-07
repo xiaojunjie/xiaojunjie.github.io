@@ -1,13 +1,13 @@
 #-*-coding:utf-8-*-
 from urllib.request import urlopen
 from urllib.request import urlretrieve
-from threading import Timer  
+from threading import Timer
 from bs4 import BeautifulSoup
 import os
 import time
-import re 
+import re
 
-  
+
 
 url = {
 	"host": "http://rs.xidian.edu.cn/",
@@ -16,7 +16,7 @@ url = {
 	"data": "_data/rs.yml",
 	"temp": "img_template.txt",
 	"log" : "git.log",
-	"storage" : "../storage/",
+	"storage" : "../../storage/ruisi/",
 	"cloud" :"/crawler/storage/"
 }
 
@@ -63,10 +63,10 @@ def outdata(html):
 		and img["alt"]!="" \
 		and	imgFetch( url["host"],img["src"] ) \
 		and	dat.write(yml % (img["alt"],url["cloud"]+img["src"],img.parent.attrs['href']))
-	dat.close() 
+	dat.close()
 	temp.close()
- 
-  
+
+
 def run():
 	try:
 		html = urlopen(url['host']+url['forum'])
@@ -77,6 +77,6 @@ def run():
 	finally:
 		git()
 
-# run()  
-for i in range(0,6*24):
-	Timer(600*i, run ).start()
+run()
+# for i in range(0,6*24):
+# 	Timer(600*i, run ).start()
