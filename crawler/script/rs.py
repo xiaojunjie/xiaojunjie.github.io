@@ -23,7 +23,9 @@ url = {
 
 
 def swift():
-	os.popen("sh "+url["swiftKey"])
+	a = os.popen("sh "+url["swiftKey"])
+	print("sh "+url["swiftKey"])
+	print(a)
 	shell = [
 		"swift upload storage "+url['storage']+" --object-name ruisi -c"
 	]
