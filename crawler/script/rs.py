@@ -85,6 +85,7 @@ def run():
 	else:
 		outdata(html.read())
 	finally:
+		swift()
 		git()
 
 run()
