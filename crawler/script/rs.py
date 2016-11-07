@@ -17,11 +17,21 @@ url = {
 	"temp": "img_template.txt",
 	"log" : "git.log",
 	"storage" : "../../storage/ruisi/",
-	"cloud" :"/crawler/storage/"
+	"cloud" :"//static.xjjfly.com/ruisi/"
 }
 
 
 
+def swift():
+	shell = [
+		"cd ../../storage",
+		"swift upload storage ruisi -c",
+		"cd ../crawler/script"
+	]
+	swiftResult=""
+	for i in shell:
+		swiftResult += os.popen(i).read()
+	outlog(swiftResult)
 
 def git():
 	shell = [
