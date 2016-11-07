@@ -84,6 +84,6 @@ def run():
 		swift()
 		git()
 
-run()
-# for i in range(0,6*24):
-# 	Timer(600*i, run ).start()
+# run()
+for i in range(0,6*24):
+	Timer(600*i, run ).start()
