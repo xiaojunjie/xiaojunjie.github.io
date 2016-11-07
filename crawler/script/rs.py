@@ -8,15 +8,14 @@ import time
 import re
 
 
-
+root = "../../"
 url = {
 	"host": "http://rs.xidian.edu.cn/",
-	"git": "../../",
 	"forum": "forum.php?mod=forumdisplay&fid=106",
 	"data": "_data/rs.yml",
 	"temp": "img_template.txt",
-	"log" : "git.log",
-	"storage" : "../../storage/ruisi/",
+	"log" : root+"log/ruisi.log",
+	"storage" : root+"storage/ruisi/",
 	"cloud" :"//static.xjjfly.com/ruisi/"
 }
 
@@ -24,7 +23,7 @@ url = {
 
 def swift():
 	shell = [
-		"swift upload storage ../../storage/ruisi --object-name ruisi -c"
+		"swift upload storage "+url['storage']+" --object-name ruisi -c"
 	]
 	swiftResult=""
 	for i in shell:
@@ -33,11 +32,11 @@ def swift():
 
 def git():
 	shell = [
-		"git -C ../../ add .",
-		"git -C ../../ commit -m 'send from my crawler' ",
-		"git -C ../../ pull",
-		"git -C ../../ merge",
-		"git -C ../../ push "
+		"git -C "+root+" add .",
+		"git -C "+root+" commit -m 'send from my crawler' ",
+		"git -C "+root+" pull",
+		"git -C "+root+" merge",
+		"git -C "+root+" push "
 	]
 	gitResult=""
 	for i in shell:
@@ -60,7 +59,7 @@ def outlog(txt):
 	log.close()
 
 def outdata(html):
-	dat  = open(url["git"]+url["data"],"w+")
+	dat  = open(url["root"]+url["data"],"w+")
 	temp = open(url["temp"],"r")
 	yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
