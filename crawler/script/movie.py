@@ -55,6 +55,8 @@ def dy2018(html):
 		
 	dat.close()
 	temp.close()
+	git()
+	
 def getFtp(html):
 	
 	bsObj = BeautifulSoup(html,"lxml")
@@ -81,8 +83,8 @@ def run(url=url['host'],resolve=dy2018):
 		outlog(url+str(e))
 	else:
 		resolve(html.read())
-	finally:
-		git()
+	# finally:
+	# 	git()
 
 
 # for i in range(0,6*24):
