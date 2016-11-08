@@ -51,29 +51,29 @@ def dy2018(html):
 	movie = div.findAll("a")
 	for x in range(1,len(movie)-1):
 		run(url['host']+movie[x]["href"],getFtp)
+		# pass
 		# time.sleep( 10 )
 		
 	dat.close()
 	temp.close()
-	git()
-	
+	# git()
+
 def getFtp(html):
-	
+	html = html.decode('gbk')
 	bsObj = BeautifulSoup(html,"lxml")
 	title = bsObj.find('title').getText()[5:-9]
 	table = bsObj.findAll("div",{"id":"Zoom"})[0].find("table")
 	if table:
 		for item in table.findAll("a"):
-			# print(title)
+			print(title)
 			# print(item.getText())
 			dat.write(yml % (title,item["href"]))
 	else:
-		html = html.decode('gbk')
 		index1 = html.find('ftp')
 		index2 = html.find('ftp',index1+10)
 		src = html[index1:index2-2];
 		dat.write(yml % (title,src))
-		# print(html[index1:index2-2])
+		print(html[index1:index2-2])
 
 
 def run(url=url['host'],resolve=dy2018):
@@ -87,5 +87,7 @@ def run(url=url['host'],resolve=dy2018):
 	# 	git()
 
 
+if __name__ == "__main__":
+    run()
 # for i in range(0,6*24):
 # 	Timer(600*i, run ).start()
