@@ -21,7 +21,6 @@ url = {
 
 
 
-
 def git():
 	shell = [
 		"git -C "+root+" add .",
@@ -45,14 +44,15 @@ def outlog(txt):
 	log.close()
 
 def outdata(html):
-	dat  = open(url["data"],"w+")
-	temp = open(url["temp"],"r")
-	yml  = str(temp.read())+"\r\n\r\n"
+	# dat  = open(url["data"],"w+")
+	# temp = open(url["temp"],"r")
+	# yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
-	for movie in bsObj.findAll("a",{"class":"ulink"}):
-        print( "123\n")
-	dat.close()
-	temp.close()
+    for a in bsObj.findAll("a"):
+		   print("%s\n",a)
+
+    # dat.close()
+	# temp.close()
 
 
 def run():
@@ -62,8 +62,8 @@ def run():
 		outlog(str(e))
 	else:
 		outdata(html.read())
-	finally:
-		# swift()
+	# finally:
+	# 	swift()
 		# git()
 
 run()
