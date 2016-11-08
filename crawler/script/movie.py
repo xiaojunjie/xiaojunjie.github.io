@@ -50,26 +50,26 @@ def outdata(html):
 	bsObj = BeautifulSoup(html,"lxml")
 	div = bsObj.find("div",{"class":"co_content222"})
 	for a in div.findAll("a"):
-		item = urlopen(url['host']+a["href"]).read()
-		bsObj = BeautifulSoup(item,"lxml")
-		xunlei = bsObj.findAll("a",{"title":"迅雷专用高速下载"})
-		print(xunlei)
-
+		run(url['host']+a["href"],getFtp)
+		
     # dat.close()
 	# temp.close()
+def getFtp(html):
+	bsObj = BeautifulSoup(html,"lxml")
+	xunlei = bsObj.findAll("a",{"title":"迅雷专用高速下载"})
+	print(xunlei)
 
-
-def run():
+def run(url,resolve):
 	try:
-		html = urlopen(url['host'])
+		html = urlopen(url)
 	except Exception as e:
 		outlog(str(e))
 	else:
-		outdata(html.read())
+		resolve(html.read())
 	# finally:
 	# 	swift()
 		# git()
 
-run()
+run(url['host'],outdata)
 # for i in range(0,6*24):
 # 	Timer(600*i, run ).start()
