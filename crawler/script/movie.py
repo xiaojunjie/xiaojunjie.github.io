@@ -44,32 +44,29 @@ def outlog(txt):
 	log.close()
 
 def dy2018(html):
-	# dat  = open(url["data"],"w+")
-	# temp = open(url["temp"],"r")
-	# yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
 	div = bsObj.find("div",{"class":"co_content222"})
 	movie = div.findAll("a")
 	for x in range(1,len(movie)-1):
-		# print(movie[x]["href"])
 		run(url['host']+movie[x]["href"],getFtp)
-	# for a in div.findAll("a"):
-	# 	run(url['host']+a["href"],getFtp)
+		# time.sleep( 10 )
 		
     # dat.close()
 	# temp.close()
 def getFtp(html):
+	dat  = open(url["data"],"w+")
+	temp = open(url["temp"],"r")
+	yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
 	table = bsObj.findAll("div",{"id":"Zoom"})[0].find("table")
-	a = []
-	if table:
-		a = table.findAll("a")
 
-	# print(a)
-	for item in a:
-		print(item["href"])
-		# item["aywrgfek"] and print(item["aywrgfek"])
-	# print(xunlei)
+	if table:
+		for item in table.findAll("a"):
+			dat.write(yml % item["href"],item.getText())
+			# print(item["href"])
+			# print(item.getText())
+	dat.close()
+	temp.close()
 
 def run(url,resolve):
 	try:
