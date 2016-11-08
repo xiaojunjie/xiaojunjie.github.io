@@ -49,21 +49,26 @@ def outdata(html):
 	# yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
 	div = bsObj.find("div",{"class":"co_content222"})
-	for a in div.findAll("a"):
-		run(url['host']+a["href"],getFtp)
+	movie = div.findAll("a")
+	print(movie[0])
+	# for a in div.findAll("a"):
+	# 	run(url['host']+a["href"],getFtp)
 		
     # dat.close()
 	# temp.close()
 def getFtp(html):
 	bsObj = BeautifulSoup(html,"lxml")
-	xunlei = bsObj.findAll("a",{"title":"迅雷专用高速下载"})
-	print(xunlei)
+	a = bsObj.findAll("a")
+	for item in a:
+		print(item)
+		# item["aywrgfek"] and print(item["aywrgfek"])
+	# print(xunlei)
 
 def run(url,resolve):
 	try:
 		html = urlopen(url)
 	except Exception as e:
-		outlog(str(e))
+		outlog(url+str(e))
 	else:
 		resolve(html.read())
 	# finally:
