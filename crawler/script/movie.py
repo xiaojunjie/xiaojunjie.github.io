@@ -60,9 +60,14 @@ def dy2018(html):
 	# temp.close()
 def getFtp(html):
 	bsObj = BeautifulSoup(html,"lxml")
-	a = bsObj.findAll("anchor")
+	table = bsObj.findAll("div",{"id":"Zoom"})[0].find("table")
+	a = []
+	if table:
+		a = table.findAll("a")
+
+	# print(a)
 	for item in a:
-		print(item)
+		print(item["href"])
 		# item["aywrgfek"] and print(item["aywrgfek"])
 	# print(xunlei)
 
