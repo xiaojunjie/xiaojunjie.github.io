@@ -3,7 +3,7 @@
   link: ./
 
 - title: 广告代理区
-  src: //static.xjjfly.com/ruisi/static/image/common/forum.gif
+  src: //static.xjjfly.com/ruisi/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=546
 
 - title: 普通交易区
@@ -15,11 +15,11 @@
   link: forum.php?mod=viewthread&tid=824086
 
 - title: 太白立交日报社小区单间出租，精装全配，房间崭新干净，小区安全宁静
-  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/08/151058f4bibcf1ucciti6c.jpg
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/38/387dec52319f2b4c18e2ca9ea7d219c6.jpg
   link: forum.php?mod=viewthread&tid=824084
 
 - title: 大四要毕业了，加湿器全新转手啦，有兴趣的看看~~
-  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/08/143728wsf2zayzca8yrycs.jpg
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/09/09b3ae562a611ba550445176cb46bd8b.jpg
   link: forum.php?mod=viewthread&tid=824075
 
 - title: 出DDR3 1066内存、笔记本硬盘、充电宝、笔记本电池、MX4手机等
