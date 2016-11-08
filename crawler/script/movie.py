@@ -48,9 +48,12 @@ def outdata(html):
 	# temp = open(url["temp"],"r")
 	# yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
-	div = bsObj.find("div",{"class":"co_content8"})
+	div = bsObj.find("div",{"class":"co_content222"})
 	for a in div.findAll("a"):
-		print("%s\n",a)
+		item = urlopen(url['host']+a["href"]).read()
+		bsObj = BeautifulSoup(item,"lxml")
+		xunlei = bsObj.findAll("a",{"title":"迅雷专用高速下载"})
+		print(xunlei)
 
     # dat.close()
 	# temp.close()
@@ -58,7 +61,7 @@ def outdata(html):
 
 def run():
 	try:
-		html = urlopen(url['host']+url['last'])
+		html = urlopen(url['host'])
 	except Exception as e:
 		outlog(str(e))
 	else:
