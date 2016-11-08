@@ -1,17 +1,18 @@
 ### About
 
-博客依靠 [Jekyll](http://jekyllrb.com/) 新建. 可以在这里预览 [http://xiaojunjie.github.io](http://xiaojunjie.github.io) .
+博客依靠 [Jekyll](//jekyllrb.com/) 新建. 可以在这里预览 [//xiaojunjie.github.io](//xiaojunjie.github.io) .
 风格上参照了 <https://herechen.github.io> .
 
 ### Usage
 
 #### 用到以下技术或资源
 
-- [jQuery](http://jquery.org): js 
-- [Bootstrap](http://getbootstrap.com/): CSS 
-- [gulp](http://gulpjs.com/): 前端工具
+- [jQuery](//jquery.org): js 
+- [Bootstrap](//getbootstrap.com/): CSS 
+- [gulp](//gulpjs.com/): 前端工具
 - [AnchorJS](https://github.com/bryanbraun/anchorjs): 标题 hover 图标
-- [Tocify](http://www.gregfranko.com/jquery.tocify.js/): 目录生成
+- [Tocify](//www.gregfranko.com/jquery.tocify.js/): 目录生成
+- [Storage](//www.sinacloud.com/doc/sae/php/storage.html)
 
 #### 使用说明
 
