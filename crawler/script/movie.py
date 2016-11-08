@@ -1,4 +1,5 @@
 #-*-coding:utf-8-*-
+#!/usr/bin/env python
 from urllib.request import urlopen
 from urllib.request import urlretrieve
 from threading import Timer
@@ -18,8 +19,9 @@ url = {
 	"storage" : "",
 	"cloud" :""
 }
-
-
+dat  = open(url["data"],"w+")
+temp = open(url["temp"],"r")
+yml  = str(temp.read())+"\r\n\r\n"
 
 def git():
 	shell = [
@@ -32,7 +34,7 @@ def git():
 	gitResult=""
 	for i in shell:
 		gitResult += os.popen(i).read()
-		time.sleep( 10 )
+		# time.sleep( 10 )
 	outlog(gitResult)
 
 
@@ -51,35 +53,37 @@ def dy2018(html):
 		run(url['host']+movie[x]["href"],getFtp)
 		# time.sleep( 10 )
 		
-    # dat.close()
-	# temp.close()
-def getFtp(html):
-	dat  = open(url["data"],"a+")
-	temp = open(url["temp"],"r")
-	yml  = str(temp.read())+"\r\n\r\n"
-	bsObj = BeautifulSoup(html,"lxml")
-	title = bsObj.find('title').getText()
-	table = bsObj.findAll("div",{"id":"Zoom"})[0].find("table")
-
-	if table:
-		for item in table.findAll("a"):
-			dat.write(yml % (title,item["href"]))
-			print(title)
-			print(item.getText())
 	dat.close()
 	temp.close()
+def getFtp(html):
+	
+	bsObj = BeautifulSoup(html,"lxml")
+	title = bsObj.find('title').getText()[5:-9]
+	table = bsObj.findAll("div",{"id":"Zoom"})[0].find("table")
+	if table:
+		for item in table.findAll("a"):
+			# print(title)
+			# print(item.getText())
+			dat.write(yml % (title,item["href"]))
+	else:
+		html = html.decode('gbk')
+		index1 = html.find('ftp')
+		index2 = html.find('ftp',index1+10)
+		src = html[index1:index2-2];
+		dat.write(yml % (title,src))
+		# print(html[index1:index2-2])
 
-def run(url,resolve):
+
+def run(url=url['host'],resolve=dy2018):
 	try:
 		html = urlopen(url)
 	except Exception as e:
 		outlog(url+str(e))
 	else:
 		resolve(html.read())
-	# finally:
-	# 	swift()
-		# git()
+	finally:
+		git()
 
-run(url['host'],dy2018)
+
 # for i in range(0,6*24):
 # 	Timer(600*i, run ).start()

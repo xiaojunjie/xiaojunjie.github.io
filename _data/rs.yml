@@ -3,19 +3,47 @@
   link: ./
 
 - title: 广告代理区
-  src: //static.xjjfly.com/ruisi/static/image/common/forum.gif
+  src: //static.xjjfly.com/ruisi/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=546
 
 - title: 普通交易区
   src: //static.xjjfly.com/ruisi/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
 
+- title: 施华蔻羊绒脂99转让啦
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/ef/ef2af33c66579a97bc016247f8b40bd6.jpg
+  link: forum.php?mod=viewthread&tid=824160
+
+- title: 一本C Prime Plus,一本数据结构（C语言版<清华大学严蔚敏版>、含题集一本）
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/2a/2a49ba7521be94b012c303e6d5b06e0a.jpg
+  link: forum.php?mod=viewthread&tid=824146
+
+- title: 求购java相关书籍
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/44/4464526f2154685dbb424b848165a8b6.jpg
+  link: forum.php?mod=viewthread&tid=824143
+
+- title: 出一个八成新北通阿修罗SE炫光版手柄
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/30/303ad0385dbd38689221f199a6a4ba2c.jpg
+  link: forum.php?mod=viewthread&tid=824141
+
+- title: 出全新《好吗好的》大冰
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/e7/e732a493a62c2a82c4809ab414cc7b10.jpg
+  link: forum.php?mod=viewthread&tid=824140
+
+- title: 出一波日语书籍（适合自学或目标能力考N2 ）
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/09/09dc3fe53fdf2d13464eb7fb2d6a36de.jpg
+  link: forum.php?mod=viewthread&tid=824131
+
+- title: 3M防雾霾口罩9501V口罩6块钱一个
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/6b/6be46fc5821e4c22e0c7226604d67a52.jpg
+  link: forum.php?mod=viewthread&tid=824125
+
 - title: 老校区出剑指offer、Android权威编程指南
   src: //static.xjjfly.com/ruisi/./data/attachment/block/28/288bf331512d6bc807ddba78f8cc7da6.jpg
   link: forum.php?mod=viewthread&tid=824116
 
 - title: 出Pattern Recognition and Machine Learning
-  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/08/164726rhstc11hzusu1565.jpg
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/8c/8c89b805f948b0814598a7d0488b9870.jpg
   link: forum.php?mod=viewthread&tid=824106
 
 - title: 出户外绳子 10米 内有钢丝 很结实 可做晾被子绳
@@ -221,34 +249,6 @@
 - title: 出两个便宜U盘
   src: //static.xjjfly.com/ruisi/./data/attachment/block/e1/e18907ea13a3f120bdfd1cfee4d137cd.jpg
   link: forum.php?mod=viewthread&tid=823285
-
-- title: 海外购全新男鞋转让
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/24/24f8325e21ceb5ff4ccc8da13607b6a1.jpg
-  link: forum.php?mod=viewthread&tid=823259
-
-- title: 出售达尔优机械键盘 合金板黑轴108键
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/1e/1e188395489b3aa9aa6d4ac965e96ef6.jpg
-  link: forum.php?mod=viewthread&tid=823250
-
-- title: 新买的男款平底鞋小了，转让
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/99/990bf7e17cc8b2da5142575fa3154dcb.jpg
-  link: forum.php?mod=viewthread&tid=823237
-
-- title: 求一个iphone6s
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/59/5982ad206c8b18d02d2556ced5247eeb.jpg
-  link: forum.php?mod=viewthread&tid=823231
-
-- title: 出民谣吉他
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/ef/ef26bbe2d5f3be6a32683980d9e933ec.jpg
-  link: forum.php?mod=viewthread&tid=823226
-
-- title: 千百度36码棕色牛皮女单鞋一双，价格180
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/0a/0ac276c202ed047384a1683920c807aa.jpg
-  link: forum.php?mod=viewthread&tid=823216
-
-- title: 白菜价出四六级单词书以及六级教程
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/cb/cbd440c3b3301033c66b77b34a1b273b.jpg
-  link: forum.php?mod=viewthread&tid=823199
 
 - title: 买苹果的可关注下此公众号，可直接下单购买
   src: //static.xjjfly.com/ruisi/./data/attachment/block/44/445a6ccea1a39dd47aa57e4096dcdf1f.jpg

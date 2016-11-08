@@ -1,7 +1,7 @@
 #-*-coding:utf-8-*-
+#!/usr/bin/env python
 from urllib.request import urlopen
 from urllib.request import urlretrieve
-from threading import Timer
 from bs4 import BeautifulSoup
 import os
 import time
@@ -85,5 +85,4 @@ def run():
 		git()
 
 # run()
-for i in range(0,6*24):
-	Timer(600*i, run ).start()
+
