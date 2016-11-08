@@ -48,9 +48,9 @@ def outdata(html):
 	# temp = open(url["temp"],"r")
 	# yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
-    div = bsObj.find("div",{"class":"co_content8"})
-    for a in div.findAll("a"):
-		   print("%s\n",a)
+	div = bsObj.find("div",{"class":"co_content8"})
+	for a in div.findAll("a"):
+		print("%s\n",a)
 
     # dat.close()
 	# temp.close()
