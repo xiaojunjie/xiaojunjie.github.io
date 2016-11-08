@@ -3,12 +3,20 @@
   link: ./
 
 - title: 广告代理区
-  src: //static.xjjfly.com/ruisi/static/image/common/forum_new.gif
+  src: //static.xjjfly.com/ruisi/static/image/common/forum.gif
   link: forum.php?mod=forumdisplay&fid=546
 
 - title: 普通交易区
   src: //static.xjjfly.com/ruisi/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
+
+- title: 老校区出剑指offer、Android权威编程指南
+  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/08/170909bw9lhfv9ggcvcvcz.jpg
+  link: forum.php?mod=viewthread&tid=824116
+
+- title: 出Pattern Recognition and Machine Learning
+  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/08/164726rhstc11hzusu1565.jpg
+  link: forum.php?mod=viewthread&tid=824106
 
 - title: 出户外绳子 10米 内有钢丝 很结实 可做晾被子绳
   src: //static.xjjfly.com/ruisi/./data/attachment/block/1d/1d82f0b52c7b70bb513c057c9723f279.jpg
@@ -241,14 +249,6 @@
 - title: 白菜价出四六级单词书以及六级教程
   src: //static.xjjfly.com/ruisi/./data/attachment/block/cb/cbd440c3b3301033c66b77b34a1b273b.jpg
   link: forum.php?mod=viewthread&tid=823199
-
-- title: 【出售kindle】【KPW1代带背光】【日版】【多看&亚马逊双系统】
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/c5/c507c2b0910aafd2462552fb36c13752.jpg
-  link: forum.php?mod=viewthread&tid=823187
-
-- title: 雀巢醇品咖啡转让
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/82/8236e85fba9eb737197fa6a199d13406.jpg
-  link: forum.php?mod=viewthread&tid=823185
 
 - title: 买苹果的可关注下此公众号，可直接下单购买
   src: //static.xjjfly.com/ruisi/./data/attachment/block/44/445a6ccea1a39dd47aa57e4096dcdf1f.jpg

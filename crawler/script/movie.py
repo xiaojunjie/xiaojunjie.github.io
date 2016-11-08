@@ -54,17 +54,18 @@ def dy2018(html):
     # dat.close()
 	# temp.close()
 def getFtp(html):
-	dat  = open(url["data"],"w+")
+	dat  = open(url["data"],"a+")
 	temp = open(url["temp"],"r")
 	yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
+	title = bsObj.find('title').getText()
 	table = bsObj.findAll("div",{"id":"Zoom"})[0].find("table")
 
 	if table:
 		for item in table.findAll("a"):
-			dat.write(yml % item["href"],item.getText())
-			# print(item["href"])
-			# print(item.getText())
+			dat.write(yml % (title,item["href"]))
+			print(title)
+			print(item.getText())
 	dat.close()
 	temp.close()
 
