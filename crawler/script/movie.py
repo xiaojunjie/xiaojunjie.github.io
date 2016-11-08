@@ -43,14 +43,16 @@ def outlog(txt):
 	log.write(txt)
 	log.close()
 
-def outdata(html):
+def dy2018(html):
 	# dat  = open(url["data"],"w+")
 	# temp = open(url["temp"],"r")
 	# yml  = str(temp.read())+"\r\n\r\n"
 	bsObj = BeautifulSoup(html,"lxml")
 	div = bsObj.find("div",{"class":"co_content222"})
 	movie = div.findAll("a")
-	print(movie[0])
+	for x in range(1,len(movie)-1):
+		# print(movie[x]["href"])
+		run(url['host']+movie[x]["href"],getFtp)
 	# for a in div.findAll("a"):
 	# 	run(url['host']+a["href"],getFtp)
 		
@@ -58,7 +60,7 @@ def outdata(html):
 	# temp.close()
 def getFtp(html):
 	bsObj = BeautifulSoup(html,"lxml")
-	a = bsObj.findAll("a")
+	a = bsObj.findAll("anchor")
 	for item in a:
 		print(item)
 		# item["aywrgfek"] and print(item["aywrgfek"])
@@ -75,6 +77,6 @@ def run(url,resolve):
 	# 	swift()
 		# git()
 
-run(url['host'],outdata)
+run(url['host'],dy2018)
 # for i in range(0,6*24):
 # 	Timer(600*i, run ).start()
