@@ -10,6 +10,14 @@
   src: //static.xjjfly.com/ruisi/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
 
+- title: 出一张卡
+  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/10/222146vorjoqn7rrui7cjq.jpg
+  link: forum.php?mod=viewthread&tid=824813
+
+- title: 【psv游戏]刀剑神域-虚空幻界 港中
+  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/10/214858oj4ss8ii44jmyoyj.jpg
+  link: forum.php?mod=viewthread&tid=824799
+
 - title: 考研押题最后三套卷！！求拼单！
   src: //static.xjjfly.com/ruisi/./data/attachment/block/68/68e1e9d1df21beb6be18aa501ca3ee3f.jpg
   link: forum.php?mod=viewthread&tid=824763
@@ -241,14 +249,6 @@
 - title: 出九九新GRE辅导书
   src: //static.xjjfly.com/ruisi/./data/attachment/block/11/112dbc6afdcfb17876d1a7e012d6bc9a.jpg
   link: forum.php?mod=viewthread&tid=823947
-
-- title: 充电台灯出售
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/ff/ff07bac366a7ad15e9324bfa7b23f2a9.jpg
-  link: forum.php?mod=viewthread&tid=823914
-
-- title: 北通阿修罗手柄（无线）出售
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/3f/3f73c38ac30bf463ab0723ba652a7972.jpg
-  link: forum.php?mod=viewthread&tid=823911
 
 - title: 天然有机红富士苹果，好吃又好看的平安果！！！
   src: //static.xjjfly.com/ruisi/./data/attachment/block/8d/8d53ead31c3780f038ed02f083e4bde8.jpg
