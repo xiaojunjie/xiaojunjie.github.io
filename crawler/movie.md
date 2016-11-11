@@ -3,9 +3,10 @@ title: 电影
 layout: default
 ---
 
+# 复制链接，用迅雷下载  
 
 <div class="module">
-<ul>
+<ol>
 {% for movie in site.data.movie limit:15 offset:0 %}
   <li>
     <a href="{{ movie.src }}" target="_blank">
@@ -13,5 +14,5 @@ layout: default
     </a>
   </li>
 {% endfor %}
-</ul>
+</ol>
 </div>

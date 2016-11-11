@@ -11,8 +11,8 @@ import re
 
 root = "../../"
 url = {
-	"host": "http://www.dy2018.com",
-	"last": "/html/gndy/dyzz/",
+	"dy2018": "http://www.dy2018.com",
+	"loldytt": "http://www.loldytt.com",
 	"data": root+"_data/movie.yml",
 	"temp": "movie_template.txt",
 	"log" : root+"log/moive.txt",
@@ -50,7 +50,7 @@ def dy2018(html):
 	div = bsObj.find("div",{"class":"co_content222"})
 	movie = div.findAll("a")
 	for x in range(1,len(movie)-1):
-		run(url['host']+movie[x]["href"],getFtp)
+		run(url['dy2018']+movie[x]["href"],dy2018_item)
 		# pass
 		# time.sleep( 10 )
 		
@@ -58,7 +58,7 @@ def dy2018(html):
 	temp.close()
 	# git()
 
-def getFtp(html):
+def dy2018_item(html):
 	html = html.decode('gbk')
 	bsObj = BeautifulSoup(html,"lxml")
 	title = bsObj.find('title').getText()[5:-9]
@@ -74,9 +74,40 @@ def getFtp(html):
 		src = html[index1:index2-2];
 		dat.write(yml % (title,src))
 		print(html[index1:index2-2])
+def location(str):
+	return str.replace("+","").replace(" ","").replace('"',"")
+
+def loldytt(html):
+	bsObj = BeautifulSoup(html,"lxml")
+	div = bsObj.find("div",{"class":"xinfenlei"})
+	if div is None:
+		text = bsObj.find("script").getText()[16:-1]
+		text = location(text)
+		print(url["loldytt"]+text)
+		return run(url["loldytt"]+text,loldytt)
+		
+	movie = div.findAll("a")
+	for x in range(1,len(movie)-1):
+		# time.sleep(10)
+		run(movie[x]["href"],loldytt_item)
+
+def loldytt_item(html):
+	html = html.decode('gbk')
+	bsObj = BeautifulSoup(html,"lxml")
+	bt    = bsObj.find("div",{"id":"bt"})
+	ul    = bsObj.find("ul",{"id":"ul1"})
+	if bt is None and ul is None:
+		text = bsObj.find("script").getText()[16:-1]
+		text = location(text)
+		run(url["loldytt"]+text,loldytt_item)
+	else:
+		title = bsObj.find('title').getText()[0:-15]
+		index1 = html.find("thunder")
+		index2 = html.find("title",index1)
+		thunder= html[index1:index2-2]
 
 
-def run(url=url['host'],resolve=dy2018):
+def run(url=url['dy2018'],resolve=dy2018):
 	try:
 		html = urlopen(url)
 	except Exception as e:
@@ -88,6 +119,6 @@ def run(url=url['host'],resolve=dy2018):
 
 
 if __name__ == "__main__":
-    run()
+    run(url['loldytt'],loldytt)
 # for i in range(0,6*24):
 # 	Timer(600*i, run ).start()
