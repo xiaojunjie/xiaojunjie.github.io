@@ -10,6 +10,10 @@
   src: //static.xjjfly.com/ruisi/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
 
+- title: 老区收个破电脑
+  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/12/220743zlamae9jkzmzl7ou.jpg
+  link: forum.php?mod=viewthread&tid=825318
+
 - title: 三星note3二手手机转让，三星note3，n9008s
   src: //static.xjjfly.com/ruisi/./data/attachment/block/80/803de30bb1ccb52574240e187ab35fbd.jpg
   link: forum.php?mod=viewthread&tid=825298
@@ -245,10 +249,6 @@
 - title: 美味葡萄干，9块9 咯，有图有真相
   src: //static.xjjfly.com/ruisi/./data/attachment/block/db/dbbc45c793c45a3f6af43784289618d5.jpg
   link: forum.php?mod=viewthread&tid=824374
-
-- title: 多功能健身椅
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/a2/a2f980f70eac76c97187be9110d0eb62.jpg
-  link: forum.php?mod=viewthread&tid=824367
 
 - title: 苹果青蓝工程
   src: //static.xjjfly.com/ruisi/./data/attachment/block/92/92efa94c3881591a5f61ed594848809d.jpg
