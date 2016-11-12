@@ -3,7 +3,7 @@
   link: ./
 
 - title: 广告代理区
-  src: //static.xjjfly.com/ruisi/static/image/common/forum_new.gif
+  src: //static.xjjfly.com/ruisi/static/image/common/forum.gif
   link: forum.php?mod=forumdisplay&fid=546
 
 - title: 普通交易区
@@ -11,7 +11,7 @@
   link: forum.php?mod=forumdisplay&fid=110
 
 - title: 双肩背包--维多利亚旅行者
-  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/12/164428h4kdqdiwqsv9mm9q.jpg
+  src: //static.xjjfly.com/ruisi/./data/attachment/block/46/466295c82751fa8bd0b59260cd6f3b28.jpg
   link: forum.php?mod=viewthread&tid=825253
 
 - title: 出跳舞毯*2和呼啦圈*1
