@@ -7,7 +7,7 @@
   link: forum.php?mod=forumdisplay&fid=546
 
 - title: 普通交易区
-  src: //static.xjjfly.com/ruisi/static/image/common/forum.gif
+  src: //static.xjjfly.com/ruisi/static/image/common/forum_new.gif
   link: forum.php?mod=forumdisplay&fid=110
 
 - title: 老区收个破电脑
@@ -250,9 +250,9 @@
   src: //static.xjjfly.com/ruisi/./data/attachment/block/db/dbbc45c793c45a3f6af43784289618d5.jpg
   link: forum.php?mod=viewthread&tid=824374
 
-- title: 苹果青蓝工程
-  src: //static.xjjfly.com/ruisi/./data/attachment/block/92/92efa94c3881591a5f61ed594848809d.jpg
-  link: forum.php?mod=viewthread&tid=825069
+- title: 爱流量充值第三季来袭，流量不够用的小伙伴看过来。。
+  src: //static.xjjfly.com/ruisi/./data/attachment/forum/201611/12/233615j3uq2z88g4431849.png
+  link: forum.php?mod=viewthread&tid=825344
 
 - title: 双十一狂欢巨献，陕北红枣倾情大放送
   src: //static.xjjfly.com/ruisi/./data/attachment/block/3b/3b5020a8a1c26c2344947195653d1ec4.jpg
