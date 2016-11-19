@@ -10,7 +10,8 @@ layout: default
             <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
             <div class="date">{{ post.date | date_to_string }}</div>
             <p class="abstract">
-              {{ post.content | strip_html | truncatewords:20 }}
+              <!-- <p>{{ post.excerpt }}</p> -->
+              {{ post.excerpt | strip_html }}
             </p>
             <p class="full-article"><a href="{{ post.url }}">Read more...</a></p>
         </div>

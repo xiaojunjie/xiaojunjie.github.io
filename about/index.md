@@ -4,12 +4,12 @@ layout: default
 ---
 
 {% comment %}
-<!-- <img src="http://7xiiha.com1.z0.glb.clouddn.com/media/img/hedcut.gif" class="img-circle img-responsive" title="{{ site.author }}"> -->
+<!-- <img src="" class="img-circle img-responsive" title="{{ site.author }}"> -->
 {% endcomment %}
 
 <div class="img-responsive img-circle hedcut"></div>
 
-<center>肖俊杰，爱好编程，未婚。</center>
+<center>肖俊杰，爱好编程，没有女朋友。</center>
 <center>本科信息安全，会点黑科技，不是黑客~</center>
 
 <div class="row">

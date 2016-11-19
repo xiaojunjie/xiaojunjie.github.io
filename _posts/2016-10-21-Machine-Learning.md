@@ -2,6 +2,7 @@
 layout: post
 title: 机器学习
 categories: note
+excerpt: 笔记内容只能保证我能看的懂，请不要查看
 tags: coursera
 ---
 
@@ -18,7 +19,7 @@ tags: coursera
 - 梯度下降： θ = θ - a/m*( θ‘X - Y )'X
 
 ## 正规方程
-- θ = inv(X'X)X'Y 
+- θ = inv(X'X)X'Y
 - 求逆O(n^3),适用于n<10000
 - 正规方程仅用了线性回归
 
@@ -38,7 +39,7 @@ tags: coursera
 	2.正则化(保留所有的特征,但是减少参数的大小)  
 -  线性和逻辑  
   J = J + 入/2m*sum(θ) **θ不包含θ0**当不处罚θ0时  
-  θ = (1-入/m)θ 
+  θ = (1-入/m)θ
   **θ0 = θ0**    
 - 正规方程  
   θ = inv(X'X-入ones(n+1,n+1))X'Y **ones的（0,0）为0**  
@@ -50,5 +51,25 @@ tags: coursera
   **每步的样本输入为h(x)**,而非Xθ，否则经过多次递归肯定出错。  
   而逻辑回归只有一步 && h(x)单调增，故max(Xθ)效果同max(h(x))  
   当然，每步和输入的样本维度要+1  
-  ![](/assets/dist/img/2016-10-27 16-49-51屏幕截图.png)  
-  蓝圈x，红圈h(x)
+  ![]({{ site.storage }}assets/dist/img/2016-10-27 16-49-51屏幕截图.png)  
+  蓝圈x，红圈h(x)  
+
+- 回归算法  
+
+## 调参  
+
+- 欠拟合  
+入=0,维度=2  
+![欠拟合]({{ site.storage }}assets/dist/img/ml-10-1.png)  
+参数过少导致y值最终过大（欠拟合）  
+![欠拟合]({{ site.storage }}assets/dist/img/ml-10-2.png)  
+- 过拟合  
+扩大x的维度，入=0,维度=9  
+![过拟合]({{ site.storage }}assets/dist/img/ml-10-3.png)  
+此时训练误差过小，过拟合  
+![过拟合]({{ site.storage }}assets/dist/img/ml-10-4.png)  
+- 调整入  
+维度=9，样本数=max，入=1  
+![调整入=1]({{ site.storage }}assets/dist/img/ml-10-6.png)
+维度=9，样本数=max，遍历入，发现3最合适  
+![调整入]({{ site.storage }}assets/dist/img/ml-10-5.png)   

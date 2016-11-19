@@ -2,6 +2,7 @@
 layout: post
 title: 计算机系统
 categories: note
+excerpt: 笔记内容只能保证我看的懂，请不要查看
 tags: 计算机
 ---
 
@@ -17,7 +18,7 @@ movl 32  双字
 movl 64  四字  
 **用movl来表示双精度浮点数不会产生歧义，因为浮点数使用的是一组不同的指令和寄存器**
 
-![IA32的整数寄存器](/assets/dist/img/2016-10-22 16-27-01屏幕截图.png)
+![IA32的整数寄存器]({{ site.storage }}assets/dist/img/2016-10-22 16-27-01屏幕截图.png)
 
 
 movsbl 8->32 字符扩展  
@@ -47,7 +48,7 @@ else $0 -> %edx
  [整数除法](/note/divid/)  
 
 - 函数调用  
-![函数堆栈](/assets/dist/img/2016-11-01 16-45-37屏幕截图.png)  
+![函数堆栈]({{ site.storage }}assets/dist/img/2016-11-01 16-45-37屏幕截图.png)  
 **父函数**  
 esp 指向参数1  
 call 返回地址（call下条指令的地址）入栈  esp指向返回地址 pc指向子函数代码区  
@@ -65,13 +66,15 @@ windows： double,long double 要求8字节对齐
 linux： 8字节数据要求4字节对齐  
 
 - 缓冲区溢出  
-![函数堆栈](/assets/dist/img/2016-11-06 14-05-56屏幕截图.png)   
+![函数堆栈]({{ site.storage }}assets/dist/img/2016-11-06 14-05-56屏幕截图.png)   
 buf过长会覆盖返回地址，植入shellcode使返回地址为shellcode的地址。因为栈的随机化，故要“空操作雪橇”使shellcode变长。  
 gcc的栈破坏检测会在buf前设置“金丝雀”，ret前检测，而其他局部变量移至buf后，使其一溢出就改动“金丝雀”  
 硬件可以检测栈内容的可执行性  
 
 - 64位  
-![64位](/assets/dist/img/2016-11-07 14-38-18屏幕截图.png)  
+![64位]({{ site.storage }}assets/dist/img/2016-11-07 14-38-18屏幕截图.png)  
 movl会将高32位置0,故无需movzlq  
 movzbl目的寄存器32位，效果同movl，将高32位置0。如addl将高32位置0,addw addb不会。  
-而高->低,高字节可以无所谓
+而高->低,高字节可以无所谓  
+K字节标量K倍对齐  
+[32位机实现64位乘](/note/csapp-3.55/)  
