@@ -3,11 +3,56 @@ title: 关于
 layout: default
 ---
 
-{% comment %}
-<!-- <img src="" class="img-circle img-responsive" title="{{ site.author }}"> -->
-{% endcomment %}
+<!-- {% comment %}
+<img src="/resume/img/head.png" class="img-circle img-responsive" title="{{ site.author }}">
+{% endcomment %} -->
+<!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
-<div class="img-responsive img-circle hedcut"></div>
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					请留下您的联系方式
+				</h4>
+			</div>
+			<div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="firstname" class="col-sm-2 control-label">名字</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname" class="col-sm-2 control-label">名字</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname" class="col-sm-2 control-label">名字</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+                        </div>
+                    </div>
+                </form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary">
+					提交
+				</button>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<div class="img-responsive img-circle hedcut" data-toggle="modal" data-target="#myModal"></div>
 
 <center>肖俊杰，爱好编程，没有女朋友。</center>
 <center>本科信息安全，会点黑科技，不是黑客~</center>
