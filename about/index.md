@@ -6,7 +6,7 @@ layout: default
 <!-- {% comment %}
 <img src="/resume/img/head.png" class="img-circle img-responsive" title="{{ site.author }}">
 {% endcomment %} -->
-<!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
 
 <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">

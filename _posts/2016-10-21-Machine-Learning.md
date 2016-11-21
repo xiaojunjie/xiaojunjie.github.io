@@ -5,18 +5,22 @@ categories: note
 excerpt: 笔记内容只能保证我能看的懂，请不要查看
 tags: coursera
 ---
+<!-- {% include MathJax.html %} -->
 
-[斯坦福大学公开课](//coursera.org/learn/machine-learning)
+[斯坦福大学公开课](//coursera.org/learn/machine-learning)  
+
+<!-- a^2 + b^2 = c^2   -->
+
 
 ## 介绍
 
 - 监督学习：把样本分成具体的类，如邮件分类。
-- 无监督学习：把样本分成若干类，不知道各类特性，如百度新闻分类
+- 无监督学习：把样本分成若干类，不知道各类特性，如百度新闻分类  
 
 ## 线性回归
 - 方案：h(x) = θ'X
-- 代价函数：J(θ) = 1/2m * sum[ (h(x) - y)^2 ]
-- 梯度下降： θ = θ - a/m*( θ‘X - Y )'X
+- 代价函数：J(θ) = \frac{1}{2m} * sum[ (h(x) - y)^2 ]
+- 梯度下降： θ = θ - \frac{a}/{m} *( θ‘X - Y )'X
 
 ## 正规方程
 - θ = inv(X'X)X'Y
@@ -55,6 +59,30 @@ tags: coursera
   蓝圈x，红圈h(x)  
 
 - 回归算法  
+a1 -> z2 -> a2 -> z3
+{% highlight matlab %}
+a1 = [ones(m, 1) X]; %5000*401 1层准备输入2层
+z2 = a1*θ1'; %5000*401 25*401   输入到2层的结果
+a2 = [ones(m, 1) h(z2)]; %5000*26 2层准备输入3层
+z3 = a2*θ2'; %5000*26 26*10  输入到3层的结果
+out= h( z3 ); %5000*10  3层准备输出
+{% endhighlight %}
+
+{% highlight matlab %}
+θ2_grad =  (h-y)'*a2/m;
+sigma2 = ((h-y)*θ2(:,2:end)).*hGrad( z2 );
+θ1_grad = sigma2'*a1/m;
+{% endhighlight %}
+
+{% highlight matlab %}
+当中间有一层网络时，
+θ2_grad可简单的看成 (a2*θ2-y)对θ2求导，结果为a2
+θ1_grad可简单的看成h(a1*θ1)*θ2对θ1求导，结果为h'(a1*θ1)*θ2*θ1  
+当中间有两层网络时，  
+θ1_grad可简单的看成h(h(a1*θ1)*θ2)*θ3对θ1求导，结果为h'(h(a1*θ1)*θ2)*θ3*θ2*θ1*h'(a1*θ1)  
+即h'(z3)*θ3*θ2*θ1*h'(z2)  
+当中间3层时θ1_grad = h'(z4)*h'(z3)*h'(z2)*θ4*θ3*θ2*θ1
+{% endhighlight %}
 
 ## 调参  
 

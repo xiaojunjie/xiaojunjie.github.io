@@ -1,5 +1,8 @@
 # site
 markdown: kramdown 				# markdown parser(or rdiscount)
+kramdown:
+  input:  GFM
+  use_coderay: true
 permalink: /:categories/:title/	            # change default url
 safe: true         				# safe mode
 # paginate: 50					# number of posts on homepage
