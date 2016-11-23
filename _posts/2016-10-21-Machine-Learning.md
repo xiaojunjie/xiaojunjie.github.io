@@ -9,7 +9,6 @@ tags: coursera
 
 [斯坦福大学公开课](//coursera.org/learn/machine-learning)  
 
-<!-- a^2 + b^2 = c^2   -->
 
 
 ## 介绍
