@@ -24,7 +24,7 @@ header,footer{
     font-size: 14px;
     color: #666;
   }
-  
+
   /*.main .article*/
   .article{
     margin-bottom: 40px;
@@ -71,7 +71,7 @@ header,footer{
     color: $link-color;
     text-decoration: underline;
     word-wrap: break-word;
-    word-break: normal; 
+    word-break: normal;
 
     [class^="icon-"]{
       color: $icon-color;
@@ -121,10 +121,13 @@ header,footer{
     padding-left: 20px;
     margin-bottom: 15px;
   }
-} 
+}
 .footer {
 	padding: 25px 0px;
-  color: #777;
+    color: #777;
+    .CopyRight{
+        color: #777;
+    }
 }
 #douban ul {
 	margin: 0;
@@ -203,8 +206,8 @@ pre{
   max-height: 500px;
 }
 // fixed
-em,blockquote { 
-  font-style: normal; 
+em,blockquote {
+  font-style: normal;
 }
 blockquote{
   font-family: Kaiti;
