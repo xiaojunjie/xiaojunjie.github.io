@@ -5,6 +5,7 @@ excerpt: 判断集合中是否有两个数的和等于某个给定整数
 categories: note
 tags: 算法
 ---
+判断集合中是否有两个数的和等于某个给定整数  
 {% highlight C++ %}
 3 void quickSort(int s[], int l, int r) {
 4     if (l < r) {
@@ -21,6 +22,8 @@ tags: 算法
 15         quickSort(s, i + 1, r);
 16     }
 17 }
+{% endhighlight %}
+{% highlight C++ %}
 18 int find(int A[], int len, int x){
 19         quickSort(A,0,len-1);
 20         int i=0,j=len-1;
