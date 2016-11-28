@@ -69,7 +69,7 @@ header,footer{
   /*.main a*/
   a{
     color: $link-color;
-    text-decoration: underline;
+    // text-decoration: underline;
     word-wrap: break-word;
     word-break: normal;
 
@@ -128,6 +128,9 @@ header,footer{
     .CopyRight{
         color: #777;
     }
+}
+#douban {
+    min-height: 543px;
 }
 #douban ul {
 	margin: 0;

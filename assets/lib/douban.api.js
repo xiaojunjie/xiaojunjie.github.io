@@ -1,6 +1,6 @@
 function DoubanApi() {
 	this.defaults = {
-		place:"douban", /*至于此 id 为 place 的标签中*/ 
+		place:"douban", /*至于此 id 为 place 的标签中*/
 		user: "88007311",
 		api: "0e030d6a0799d83d2a09283e16cd88b7",
 		book:[{status:"reading",maxnum:20},{status:"read",maxnum:100},{status:"wish",maxnum:100}],
@@ -11,8 +11,8 @@ function DoubanApi() {
 }
 
 DoubanApi.prototype.make_api_url = function(type,user,key,status,begin,end) {
-	var url = "http://api.douban.com/people/" + user + "/collection?cat=" + type 
-		+ "&start-index=" + begin + "&max-results=" + end + "&status=" + status 
+	var url = "http://api.douban.com/people/" + user + "/collection?cat=" + type
+		+ "&start-index=" + begin + "&max-results=" + end + "&status=" + status
 		+ "&alt=xd&callback=dbapi." + type + status + "_show";
 	if (key.lenght > 0) {
 		url += "&apikey=" + key;

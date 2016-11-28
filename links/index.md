@@ -11,6 +11,5 @@ class: links
 
 ## 爬虫
 
-[电影](/crawler/movie/)
-[睿思二手](/crawler/rs/)
-
+<!-- [电影](/demo/movie/) -->
+<!-- [睿思二手](/crawler/rs/) -->

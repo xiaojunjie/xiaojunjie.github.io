@@ -12,7 +12,9 @@
     }
 
     /* 1.up to top */
-    addLoadEvent(backToTop(config.backtopId));
+    addLoadEvent(function(){
+        backToTop(config.backtopId)
+    });
 
     /* 2.title anchor */
     anchors.options = {

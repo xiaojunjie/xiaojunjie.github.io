@@ -1,3 +1,0 @@
-- title: %s
-  src: %s
-  link: %s
