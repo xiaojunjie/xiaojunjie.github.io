@@ -12,8 +12,8 @@ layout: compress
       </div>
     </div>
     {% include footer.html %}
-    <script src="//apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="{{ site.storage }}/assets/dist/js/main.min.js?v=1.41"></script>
+    <script src="{% if !site.debug %}/assets/lib/{% else %}//apps.bdimg.com/libs/{% endif %}jquery/2.1.1/jquery.min.js"></script>
+    <script src="{% if !site.debug %}/assets/lib/{% else %}//apps.bdimg.com/libs/{% endif %}bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="{% if !site.debug %}{{ site.storage }}{% endif %}/assets/dist/js/main.min.js?v=1.41"></script>
   </body>
 </html>
