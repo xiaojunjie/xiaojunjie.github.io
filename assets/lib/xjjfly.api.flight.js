@@ -81,8 +81,10 @@ Flight.api = [{
             result.push(day.price)
         });
         for (var past = this.date.getDate() - 2; past >= 0; past--) {
-            result[past] = priceMAX;
+            result[ past ] = priceMAX;
         }
+        var today = this.date.getDate() - 1;
+        result[ today ]==0 && (result[ today ]=priceMAX);
         return result;
     }
 }/*,{
