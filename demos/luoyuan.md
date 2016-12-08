@@ -96,8 +96,8 @@ window.addEventListener('load', function(){
         data: null,
         dataType: "jsonp",
         success:function(data){
-            data.forEach(function(src){
-                $("#luoyuan_baidu").append($("<img src="+src+"><br /><br />"))
+            data.forEach(function(src,index){
+                $("#luoyuan_baidu").append($("<img src=//crawler.xjjfly.com/luoyuan/baidu/image/"+index+".jpg><br /><br />"))
             })
         }
     })
