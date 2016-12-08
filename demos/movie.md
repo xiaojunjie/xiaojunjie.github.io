@@ -11,10 +11,9 @@ layout: post
 <script type="text/javascript">
 window.onload = function() {
     var sites = ["www.dy2018.com", "www.loldytt.com"];
-    var api = "//api.xjjfly.com";
+    var api = "//api.xjjfly.com/movie/index.php";
     sites.forEach(function(site){
         var data = {
-            cat: "movie",
             site: site
         };
         $.ajax({
