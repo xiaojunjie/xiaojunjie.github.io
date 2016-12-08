@@ -97,7 +97,7 @@ window.addEventListener('load', function(){
         dataType: "jsonp",
         success:function(data){
             data.forEach(function(src){
-                $("#luoyuan_baidu").append($("<img>").attr("src",src))
+                $("#luoyuan_baidu").append($("<img src="+src+"><br /><br />"))
             })
         }
     })
@@ -113,7 +113,7 @@ window.addEventListener('load', function(){
         dataType: "jsonp",
         success:function(data){
             data.forEach(function(src){
-                $("#luoyuan_sina").append($("<img>").attr("src",src))
+                $("#luoyuan_sina").append($("<img src="+src+"><br /><br />"))
             })
         }
     })
