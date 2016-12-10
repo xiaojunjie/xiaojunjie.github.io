@@ -1,18 +1,18 @@
 ### About
 
-博客依靠 [Jekyll](//jekyllrb.com/) 新建. 可以在这里预览 [//xiaojunjie.github.io](//xiaojunjie.github.io) .
+博客依靠 [Jekyll](//jekyllrb.com/) 新建. 可以在这里预览 [//xjjfly.com](//xjjfly.com) .
 风格上参照了 <https://herechen.github.io> .
 
 ### Usage
 
 #### 用到以下技术或资源
 
-- [jQuery](//jquery.org): js 
-- [Bootstrap](//getbootstrap.com/): CSS 
+- [jQuery](//jquery.org): js
+- [Bootstrap](//getbootstrap.com/): CSS
 - [gulp](//gulpjs.com/): 前端工具
 - [AnchorJS](https://github.com/bryanbraun/anchorjs): 标题 hover 图标
 - [Tocify](//www.gregfranko.com/jquery.tocify.js/): 目录生成
-- [Storage](//www.sinacloud.com/doc/sae/php/storage.html)
+
 
 #### 使用说明
 
@@ -24,4 +24,3 @@
 
 - `_config.yml` 中的账号信息
 -  `assets/src/js/douban.api.js` 中的豆瓣 api
-
