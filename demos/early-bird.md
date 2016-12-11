@@ -48,6 +48,7 @@ var option = {
         }
     ]
 };
+myChart = echarts.init(document.getElementById("myChart"));
 function setArrow(picture){
     switch (picture.province_name) {
         case "内蒙古自治区":
@@ -113,7 +114,6 @@ function setMarkLine(picture) {
     };
 }
 function setLocation(picture){
-    myChart = echarts.init(document.getElementById("myChart"));
     myChart.setOption(option);
     myChart.setOption({
         series: [{
