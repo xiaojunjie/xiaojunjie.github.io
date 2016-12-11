@@ -37,29 +37,9 @@ window.addEventListener('load', function(){
         var style = picture.width > picture.height ? "width:100%" :"width:400px";
         $(this).children("ul").append($("<li><span>"+title+"</span><br /><img src="+cdn+picture.path+" style="+style+"><br /><br /></li>"));
     });
-    var data = {
-        "common": {
-            "uid": "360383231",
-            "platform": "Android",
-            "language": "CN"
-        },
-        "params": {
-            "is_webp": 1,
-            "city_id": "1770",
-            "page_length": 20,
-            "page_past": 0,
-            "is_wifi": 1
-        },
-        "Method": "POST",
-        "ContentType": "json",
-        "Url": "http://ugc.moji001.com/sns/json/liveview/timeline/city"
-    };
-    var api = "http://api.xjjfly.com/public/jsonp.php";
     $.ajax({
-        type: "get",
         async: true,
-        url: api,
-        data: data,
+        url: "http://api.xjjfly.com/luoyuan/moji.php",
         dataType: "jsonp",
         success: function(data) {
             var now = new Date();
@@ -70,13 +50,14 @@ window.addEventListener('load', function(){
             var before_yesterday = new Date(year, month, day-1);
             var past = new Date(year, month, day-2);
             var cat = [
-            function( picture ){
-                return picture.create_time < now && picture.create_time>yesterday ;
-            },function( picture ){
-                return picture.create_time < yesterday && picture.create_time>before_yesterday;
-            },function( picture ){
-                return picture.create_time < before_yesterday && picture.create_time>past;
-            }];
+                function( picture ){
+                    return picture.create_time < now && picture.create_time>yesterday ;
+                },function( picture ){
+                    return picture.create_time < yesterday && picture.create_time>before_yesterday;
+                },function( picture ){
+                    return picture.create_time < before_yesterday && picture.create_time>past;
+                }
+            ];
             data["picture_list"].forEach(function(picture){
                 cat.some(function(handler,index){
                     return handler(picture) && $("div[id^='moji_']").eq(index).trigger("cat",picture);

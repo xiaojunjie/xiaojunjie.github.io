@@ -4,7 +4,7 @@ layout: default
 ---
 <div id="thisMonth" style="width: 100%;height:400px;margin-bottom:100px;"></div>
 <div id="nextMonth" style="width: 100%;height:400px;"></div>
-<script src="{{ site.storage }}/assets/lib/echarts.min.js"></script>
+<script src="{{ site.storage }}/assets/lib/echarts/line.min.js"></script>
 <script src="{{ site.storage }}/assets/lib/xjjfly.api.flight.js"></script>
 <script type="text/javascript">
 window.addEventListener('load',function(){
