@@ -171,7 +171,7 @@ window.addEventListener('load', function(){
             data.sort(function(a,b){
                 return a["create_time"] - b["create_time"]
             });
-            for (var i = 1; i < 10; i++) {
+            for (var i = 1; i < 200; i++) {
                 $("#moji_morning_title").hide();
                 $("#moji_morning_image").hide();
                 data[i]["id"]!=data[i+1]["id"] && setTimeout(get_picture,2000*i,data[i]["id"],i)
