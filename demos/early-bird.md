@@ -4,16 +4,19 @@ layout: default
 ---
 <div class="col-md-9">
 <div id="myChart" style="width:100%;height:400px"><ul></ul></div>
-<div id="moji_morning_title" style="display: none;">
-<p>坐标：东经<span class="longitude"></span>   北纬<span class="latitude"></span></p>
-<p>地址：<span class="location"></span></p>
-<p>时间：<span class="time"></span></p>
+<div id="moji_morning_title" style="display: none;" class="text-overflow">
+<div class="moji_morning_detail pull-left">
+    <p>坐标：东经<span class="longitude"></span>   北纬<span class="latitude"></span></p>
+    <p>地址：<span class="location"></span></p>
+    <p>时间：<span class="time"></span></p>
+</div>
+<div class="face pull-right" style="width:10%"></div>
 </div>
 </div>
 <div class="col-md-3">
-<div id="moji_morning">
+<div id="moji_morning_image"  style="display: none;">
+    <p>NO.<span class="NO"></span> <span class="province"></span> <span class="time"></span></p>
     <div class="picture"></div>
-    <p >NO.<span class="NO"></span> <span class="province"></span> <span class="time"></span></p>
 </div>
 </div>
 
@@ -55,7 +58,6 @@ function setArrow(picture){
             return {coord: [picture.longitude-3, picture.latitude+3]};
             break;
         case "新疆维吾尔自治区":
-        case "贵州省":
         case "云南省":
         case "西藏自治区":
             return {coord: [picture.longitude-8, picture.latitude]};
@@ -73,7 +75,7 @@ function setArrow(picture){
     }
 }
 function isInside(picture){
-    return -1 < ["四川省","湖北省","湖南省","重庆市","陕西省","山西省","青海省","甘肃省"].indexOf(picture.province_name)
+    return -1 < ["贵州省","四川省","湖北省","湖南省","重庆市","陕西省","山西省","青海省","甘肃省"].indexOf(picture.province_name)
 }
 function setMarkPoint(picture){
     if(!isInside(picture))return null;
@@ -133,10 +135,11 @@ window.addEventListener('load', function(){
     function get_picture(id, index){
         $.ajax({
             async: true,
-            url: "//fetch.applinzi.com/moji/get_picture.php",
+            url: "//api.xjjfly.com/moji/get_picture.php",
             data:{id:id},
             dataType: "jsonp",
             success:function(data){
+                console.log(data);
                 var picture = data.picture;
                 var cdn = {
                     webp: "//cdn.moji002.com/images/webp/simgs/",
@@ -150,26 +153,27 @@ window.addEventListener('load', function(){
                 $("#moji_morning_title .latitude").text(picture.latitude);
                 $("#moji_morning_title .location").text(picture.location);
                 $("#moji_morning_title .time").text((new Date(picture.create_time)).toLocaleString());
-                $("#moji_morning .picture").html("<img src="+src+"><br /><br />");
-                $("#moji_morning .time").text((new Date(picture.create_time)).toLocaleTimeString().slice(2,-3));
-                $("#moji_morning .NO").text(index);
-                $("#moji_morning .province").text(picture.province_name);
+                $("#moji_morning_image .picture").html("<img src="+src+">");
+                /* $("#moji_morning_title .face").html("<img src="+picture.face+" class='img-circle'>");*/
+                $("#moji_morning_image .time").text((new Date(picture.create_time)).toLocaleTimeString().slice(2,-3));
+                $("#moji_morning_image .NO").text(index);
+                $("#moji_morning_image .province").text(picture.province_name);
                 $("#moji_morning_title").show();
-                $("#moji_morning p").show();
+                $("#moji_morning_image").show();
             }
         })
     };
     $.ajax({
         async: true,
-        url: "//fetch.applinzi.com/moji/morning.php",
+        url: "//api.xjjfly.com/moji/morning.php",
         dataType: "jsonp",
         success:function(data){
             data.sort(function(a,b){
                 return a["create_time"] - b["create_time"]
             });
-            for (var i = 1; i < 1000; i++) {
+            for (var i = 1; i < 10; i++) {
                 $("#moji_morning_title").hide();
-                $("#moji_morning p").hide();
+                $("#moji_morning_image").hide();
                 data[i]["id"]!=data[i+1]["id"] && setTimeout(get_picture,2000*i,data[i]["id"],i)
             }
         }
