@@ -132,50 +132,38 @@ function setLocation(picture){
     });
 }
 window.addEventListener('load', function(){
-    function get_picture(id, index){
-        $.ajax({
-            async: true,
-            url: "//api.xjjfly.com/moji/get_picture.php",
-            data:{id:id},
-            dataType: "jsonp",
-            success:function(data){
-                console.log(data);
-                var picture = data.picture;
-                var cdn = {
-                    webp: "//cdn.moji002.com/images/webp/simgs/",
-                    jpg: "//cdn.moji002.com/images/sthumb/"
-                };
-                var src = picture["path"].slice(-3)=="jpg"?cdn["jpg"]:cdn["webp"];
-                    src+= picture["path"];
-                console.log(picture.province_name);
-                setLocation(picture);
-                $("#moji_morning_title .longitude").text(picture.longitude);
-                $("#moji_morning_title .latitude").text(picture.latitude);
-                $("#moji_morning_title .location").text(picture.location);
-                $("#moji_morning_title .time").text((new Date(picture.create_time)).toLocaleString());
-                $("#moji_morning_image .picture").html("<img src="+src+">");
-                /* $("#moji_morning_title .face").html("<img src="+picture.face+" class='img-circle'>");*/
-                $("#moji_morning_image .time").text((new Date(picture.create_time)).toLocaleTimeString().slice(2,-3));
-                $("#moji_morning_image .NO").text(index);
-                $("#moji_morning_image .province").text(picture.province_name);
-                $("#moji_morning_title").show();
-                $("#moji_morning_image").show();
-            }
-        })
+    function display(picture, index){
+        $("#moji_morning_title").hide();
+        $("#moji_morning_image").hide();
+        var cdn = {
+            webp: "//cdn.moji002.com/images/webp/simgs/",
+            jpg: "//cdn.moji002.com/images/sthumb/"
+        };
+        var src = picture["path"].slice(-3)=="jpg"?cdn["jpg"]:cdn["webp"];
+            src+= picture["path"];
+        console.log(picture);
+        console.log(picture.province_name);
+        setLocation(picture);
+        $("#moji_morning_title .longitude").text(picture.longitude);
+        $("#moji_morning_title .latitude").text(picture.latitude);
+        $("#moji_morning_title .location").text(picture.location);
+        $("#moji_morning_title .time").text((new Date(picture.create_time)).toLocaleString());
+        $("#moji_morning_image .picture").html("<img src="+src+">");
+        $("#moji_morning_image .time").text((new Date(picture.create_time)).toLocaleTimeString().slice(2,-3));
+        $("#moji_morning_image .NO").text(index+1);
+        $("#moji_morning_image .province").text(picture.province_name);
+        $("#moji_morning_title").show();
+        $("#moji_morning_image").show();
     };
     $.ajax({
         async: true,
         url: "//api.xjjfly.com/moji/morning.php",
         dataType: "jsonp",
+        data: {"page_length": 100},
         success:function(data){
-            data.sort(function(a,b){
-                return a["create_time"] - b["create_time"]
-            });
-            for (var i = 1; i < 200; i++) {
-                $("#moji_morning_title").hide();
-                $("#moji_morning_image").hide();
-                data[i]["id"]!=data[i+1]["id"] && setTimeout(get_picture,2000*i,data[i]["id"],i)
-            }
+            data.forEach(function(picture,index){
+                setTimeout(display, 2000*index, picture, index)
+            })
         }
     })
 
