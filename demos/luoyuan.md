@@ -39,7 +39,7 @@ window.addEventListener('load', function(){
     });
     $.ajax({
         async: true,
-        url: "http://api.xjjfly.com:8080/jsonp/luoyuan?source=moji",
+        url: "http://api.xjjfly.com:8080/jsonp/luoyuan?source=moji&order=create_time",
         dataType: "jsonp",
         success: function(data) {
             var now = new Date();
@@ -58,7 +58,7 @@ window.addEventListener('load', function(){
                     return picture.create_time < before_yesterday && picture.create_time>past;
                 }
             ];
-            data["picture_list"].forEach(function(picture){
+            data.forEach(function(picture){
                 cat.some(function(handler,index){
                     return handler(picture) && $("div[id^='moji_']").eq(index).trigger("cat",picture);
                 }) || $("div[id^='moji_']").eq(-1).trigger("cat",picture);
