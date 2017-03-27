@@ -139,8 +139,7 @@ window.addEventListener('load', function(){
             webp: "//cdn.moji002.com/images/webp/simgs/",
             jpg: "//cdn.moji002.com/images/sthumb/"
         };
-        var src = picture["path"].slice(-3)=="jpg"?cdn["jpg"]:cdn["webp"];
-            src+= picture["path"];
+        var src = picture["path"];
         console.log(picture);
         console.log(picture.province_name);
         setLocation(picture);
@@ -157,7 +156,7 @@ window.addEventListener('load', function(){
     };
     $.ajax({
         async: true,
-        url: "//api.xjjfly.com/moji/morning.php",
+        url: "//api.xjjfly.com:8080/jsonp/earlybird",
         dataType: "jsonp",
         data: {"page_length": 100},
         success:function(data){

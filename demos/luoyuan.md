@@ -39,7 +39,7 @@ window.addEventListener('load', function(){
     });
     $.ajax({
         async: true,
-        url: "http://api.xjjfly.com/luoyuan/moji.php",
+        url: "http://api.xjjfly.com:8080/jsonp/luoyuan?source=moji",
         dataType: "jsonp",
         success: function(data) {
             var now = new Date();
@@ -69,7 +69,7 @@ window.addEventListener('load', function(){
 });
 
 window.addEventListener('load', function(){
-    var api = "//api.xjjfly.com/luoyuan/baidu.php";
+    var api = "//api.xjjfly.com:8080/jsonp/luoyuan?source=baidu";
     $.ajax({
         type: "get",
         async: true,
@@ -77,15 +77,15 @@ window.addEventListener('load', function(){
         data: null,
         dataType: "jsonp",
         success:function(data){
-            data.forEach(function(src,index){
-                $("#luoyuan_baidu").append($("<img src=//crawler.xjjfly.com/"+src+"><br /><br />"))
+            data.forEach(function(p,index){
+                $("#luoyuan_baidu").append($("<img src=//static.xjjfly.com/"+p['path']+"><br /><br />"))
             })
         }
     })
 });
 
 window.addEventListener('load', function(){
-    var api = "//api.xjjfly.com/luoyuan/sina.php";
+    var api = "//api.xjjfly.com:8080/jsonp/luoyuan?source=sina";
     $.ajax({
         type: "get",
         async: true,
@@ -93,8 +93,8 @@ window.addEventListener('load', function(){
         data: null,
         dataType: "jsonp",
         success:function(data){
-            data.forEach(function(src){
-                $("#luoyuan_sina").append($("<img src="+src+"><br /><br />"))
+            data.forEach(function(p){
+                $("#luoyuan_sina").append($("<img src="+p['url']+"><br /><br />"))
             })
         }
     })
