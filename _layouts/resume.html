@@ -4,6 +4,7 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <title>个人简介</title>
@@ -52,7 +53,7 @@ layout: compress
                         <dd><i class="icon-wechat"></i>微信: <a href="#">{{ page.contact-info.wechat }}</a></dd>
                         <dd><i class="icon-qq"></i>Q&nbsp;Q: <a href="http://wpa.qq.com/msgrd?v=3&uin={{ page.contact-info.qq }}&site=qq&menu=yes" target="_blank">{{ page.contact-info.qq }}</a></dd>
                         <dd><i class="icon-plancast"></i>博客: <a href="//{{ page.contact-info.blog }}" target="_blank">{{ page.contact-info.blog }}</a></dd>
-                        <dd><i class="icon-github-circled"></i>开源:<a href="//{{ page.contact-info.github }}" target="_blank">{{ page.contact-info.github }}</a></dd>
+                        <!-- <dd><i class="icon-github-circled"></i>开源:<a href="//{{ page.contact-info.github }}" target="_blank">{{ page.contact-info.github }}</a></dd> -->
                     </div>
 
                 </li>
@@ -67,8 +68,7 @@ layout: compress
                                 <h4>{{ item.title }}</h4>
                                 <p>{{ item.content }}</p>
                                 {% if item.img %}
-                                    <img src="{{ item.img }}">
-                                {% endif %}
+                                <img src="{{ item.img }}"> {% endif %}
                             </li>
                             {% endfor %}
                         </ul>
@@ -89,8 +89,7 @@ layout: compress
                                 </h4>
                                 <p>{{ item.content }}</p>
                                 {% if item.img %}
-                                    <img src="{{ item.img }}">
-                                {% endif %}
+                                <img src="{{ item.img }}"> {% endif %}
                             </li>
                             {% endfor %}
                         </ul>
@@ -102,13 +101,12 @@ layout: compress
                         <h3>编程语言</h3>
                         <ul class="exp">
                             {% for item in page.program %}
-                                <li>
-                                    <div class="circle"></div>
-                                    <h4>{{ item.language }}</h4>
-                                    {% for detail in item.detail  %}
-                                        <p>{{ detail }}</p>
-                                    {% endfor %}
-                                </li>
+                            <li>
+                                <div class="circle"></div>
+                                <h4>{{ item.language }}</h4> {% for detail in item.detail %}
+                                <p>{{ detail }}</p>
+                                {% endfor %}
+                            </li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -117,16 +115,14 @@ layout: compress
                         <ul class="exp">
                             <li>
                                 <div class="circle"></div>
-                                <h4>计算机基础</h4>
-                                {% for detail in page.ComputerSystem  %}
-                                    <p>{{ detail }}</p>
+                                <h4>计算机基础</h4> {% for detail in page.ComputerSystem %}
+                                <p>{{ detail }}</p>
                                 {% endfor %}
                             </li>
                             <li>
                                 <div class="circle"></div>
-                                <h4>开发能力</h4>
-                                {% for detail in page.development  %}
-                                    <p>{{ detail }}</p>
+                                <h4>开发能力</h4> {% for detail in page.development %}
+                                <p>{{ detail }}</p>
                                 {% endfor %}
                             </li>
                         </ul>
@@ -139,16 +135,15 @@ layout: compress
                         <ul class="exp">
                             <li>
                                 <div class="circle"></div>
-                                <h4>比赛</h4>
-                                {% for item in page.competition limit:5 %}
-                                    <p>{{ item }}</p>
+                                <h4>比赛</h4> {% for item in page.competition limit:5 %}
+                                <p>{{ item }}</p>
                                 {% endfor %}
                             </li>
                             <li>
                                 <h4>学习</h4>
                                 <div class="circle"></div>
                                 {% for item in page.scholarship limit:5 %}
-                                    <p>{{ item }}</p>
+                                <p>{{ item }}</p>
                                 {% endfor %}
                             </li>
                         </ul>
@@ -165,7 +160,7 @@ layout: compress
                                 <div class="circle"></div>
                                 <h4>将来</h4>
                                 <p>{{ page.future }}</p>
-                                </li>
+                            </li>
                         </ul>
                     </div>
                 </li>
