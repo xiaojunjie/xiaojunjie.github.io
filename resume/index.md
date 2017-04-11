@@ -56,7 +56,7 @@ program:
     - language: Python
       detail:
         - 能够利用scrapy爬虫框架完成爬虫程序设计。
-        - 能够利用nump,matplotlib等完成基本的数据分析。
+        - 能够利用numpy,matplotlib等完成基本的数据分析。
 
     - language: JavaScript
       detail:
