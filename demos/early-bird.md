@@ -148,7 +148,7 @@ window.addEventListener('load', function(){
         $("#moji_morning_title .location").text(picture.location);
         $("#moji_morning_title .time").text((new Date(picture.create_time)).toLocaleString());
         $("#moji_morning_image .picture").html("<img src="+src+">");
-        $("#moji_morning_image .time").text((new Date(picture.create_time)).toLocaleTimeString().slice(2,-3));
+        $("#moji_morning_image .time").text((new Date(picture.create_time)).toLocaleTimeString().slice(0,-3));
         $("#moji_morning_image .NO").text(index+1);
         $("#moji_morning_image .province").text(picture.province_name);
         $("#moji_morning_title").show();
