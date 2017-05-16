@@ -5,7 +5,6 @@ categories: note
 excerpt: 笔记内容只能保证我能看的懂，请不要查看
 tags: coursera
 ---
-<!-- {% include MathJax.html %} -->
 
 [斯坦福大学公开课](//coursera.org/learn/machine-learning)  
 
@@ -54,7 +53,7 @@ tags: coursera
   **每步的样本输入为h(x)**,而非Xθ，否则经过多次递归肯定出错。  
   而逻辑回归只有一步 && h(x)单调增，故max(Xθ)效果同max(h(x))  
   当然，每步和输入的样本维度要+1  
-  ![]({{ site.storage }}assets/dist/img/2016-10-27 16-49-51屏幕截图.png)  
+  ![神经网络]({{ site.storage }}/assets/dist/img/2016-10-27 16-49-51屏幕截图.png)  
   蓝圈x，红圈h(x)  
 
 - 回归算法  
@@ -87,16 +86,16 @@ sigma2 = ((h-y)*θ2(:,2:end)).*hGrad( z2 );
 
 - 欠拟合  
 入=0,维度=2  
-![欠拟合]({{ site.storage }}assets/dist/img/ml-10-1.png)  
+![欠拟合]({{ site.storage }}/assets/dist/img/ml-10-1.png)  
 参数过少导致y值最终过大（欠拟合）  
-![欠拟合]({{ site.storage }}assets/dist/img/ml-10-2.png)  
+![欠拟合]({{ site.storage }}/assets/dist/img/ml-10-2.png)  
 - 过拟合  
 扩大x的维度，入=0,维度=9  
-![过拟合]({{ site.storage }}assets/dist/img/ml-10-3.png)  
+![过拟合]({{ site.storage }}/assets/dist/img/ml-10-3.png)  
 此时训练误差过小，过拟合  
-![过拟合]({{ site.storage }}assets/dist/img/ml-10-4.png)  
+![过拟合]({{ site.storage }}/assets/dist/img/ml-10-4.png)  
 - 调整入  
 维度=9，样本数=max，入=1  
-![调整入=1]({{ site.storage }}assets/dist/img/ml-10-6.png)
+![调整入=1]({{ site.storage }}/assets/dist/img/ml-10-6.png)
 维度=9，样本数=max，遍历入，发现3最合适  
-![调整入]({{ site.storage }}assets/dist/img/ml-10-5.png)   
+![调整入]({{ site.storage }}/assets/dist/img/ml-10-5.png)   
