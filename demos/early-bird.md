@@ -156,7 +156,7 @@ window.addEventListener('load', function(){
     };
     $.ajax({
         async: true,
-        url: "//api.xjjfly.com:8080/jsonp/earlybird",
+        url: "//do.xjjfly.com/moji",
         dataType: "jsonp",
         data: {"page_length": 100},
         success:function(data){
