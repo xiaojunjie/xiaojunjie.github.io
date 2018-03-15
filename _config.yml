@@ -9,7 +9,7 @@ truncate: 200 				# the number of words preview a post
 # peronal
 name: XJJFLY			# site f
 author: Shaw					# author
-url: https://xjjfly.com			# url
+url: http://xjjfly.com			# url
 description: 肖俊杰的博客 		# description
 keywords: 肖俊杰，西电，罗源
 storage:
