@@ -156,7 +156,7 @@ window.addEventListener('load', function(){
     };
     $.ajax({
         async: true,
-        url: "//do.xjjfly.com/moji",
+        url: "//api.xjjfly.com/moji",
         dataType: "jsonp",
         data: {"page_length": 100},
         success:function(data){
