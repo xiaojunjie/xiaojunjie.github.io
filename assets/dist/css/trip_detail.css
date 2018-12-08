@@ -1,0 +1,68 @@
+.i_arrow, .i_arrow2, .i_arrow3, .i_ball, .i_boat, .i_book, .i_bus, .i_buy, .i_cal, .i_cash, .i_cur, .i_din, .i_dui, .i_fee, .i_flt, .i_fly, .i_fot, .i_ftime, .i_gth, .i_htl, .i_i, .i_i2, .i_i3, .i_ired, .i_kdj, .i_local, .i_mail, .i_map, .i_per_adu, .i_per_kid, .i_pic, .i_prt, .i_s, .i_sce, .i_star, .i_t, .i_tel, .i_wan, .i_wharf, .i_zz {
+        background-image: url(ico_travel.png);
+        background-repeat: no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+        height: 15px;
+        width: 15px;
+        margin-right: 4px;
+}
+.i_ball, .i_boat, .i_book, .i_bus, .i_buy, .i_cash, .i_din, .i_flt, .i_htl, .i_sce, .i_star, .i_t, .i_wan, .i_wharf {
+        height: 20px;
+        width: 20px;
+        /*float: left;*/
+        /*margin: 5px 0 0 -87px;*/
+        background-color: #fff;
+}
+
+.i_tel{background-position:-38px -72px}
+.i_i{background-position:-59px -40px}
+.i_i2{background-position:-41px -107px}
+.i_i3{background-position:-41px -135px;width:13px}
+.i_arrow{background-position:-64px -74px}
+.i_arrow2{background-position:-64px -60px}
+.i_arrow3{background-position:-64px -86px}
+.i_mail{background-position:-20px -36px}
+.i_prt{background-position:-39px -36px}
+.i_pic{background-position:-20px 0}
+.i_cal{background-position:-20px -20px}
+.i_fot{background-position:-20px -55px}
+.i_fot.cur{background-position:-20px -160px}
+.i_map{background-position:-38px -55px}
+.i_s{background-position:-20px -73px}
+.i_t{background-position:0 0}
+.i_flt{background-position:0 -20px}
+.i_sce{background-position:0 -40px}
+.i_din{background-position:0 -60px}
+.i_htl{background-position:0 -79px}
+.i_boat{background-position:0 -180px}
+.i_cash{background-position:0 -200px}
+.i_wharf{background-position:0 -220px}
+.i_bus{background-position:0 -240px}
+.i_wan{background-position:0 -260px}
+.i_buy{background-position:0 -280px}
+.i_star{background-position:0 -300px}
+.i_ball{background-position:0 -320px}
+.i_book{background-position:0 -340px}
+.i_fee{background-position:-41px -122px}
+.i_ired{background-position:-42px -137px}
+.i_ftime{background-position:-55px -107px}
+.i_zz{background-position:-55px -135px}
+.i_cur{background-position:0 -143px;margin-right:0}
+.i_local{background-position:-42px -150px}
+.i_fly{background-position:0 -160px;height:12px}
+.i_kdj{background-position:-56px -122px}
+.i_gth{
+    background-position:0 -100px;
+    height:40px;width:40px;
+    /*display:block;*/
+    /*margin:0 auto 20px*/
+}
+.i_dui{background-position:-20px -145px;height:11px;width:11px}
+.i_per_adu{background-position:-20px -145px;height:12px;width:12px}
+.i_per_kid{background-position:-20px -145px;height:12px;width:12px}
+.cost{
+    color: #999;
+}
