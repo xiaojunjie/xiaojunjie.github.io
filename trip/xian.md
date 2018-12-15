@@ -1,4 +1,4 @@
----
+-
 layout: trip
 title: 西安
 categories: trip
@@ -24,7 +24,7 @@ tags: 旅游
 ## D1 市区景点  
 
 <div class="cost" markdown='1'>
-<i class="i_din"></i>  街边有很多早餐的小推车，包子豆浆之类。  
+<i class="i_din"></i> 早餐：街边有很多早餐的小推车，包子豆浆之类。  
 </div>
 
 ### 8:00 永宁门    
@@ -140,7 +140,25 @@ tags: 旅游
 
 ## D2 西岳华山  
 
-待更新  
+<div class="cost" markdown='1'>
+<i class="i_din"></i>  早餐：钟楼东北角的小区楼下也有很多早餐，这个就比较有当地特色，像胡辣汤。之前只去过一次，叫新民街，感觉里面早餐比较多。可以带点水果零食上山  
+</div>
+
+<div class="cost" markdown='1'>
+<i class="i_bus"></i> 地铁2号线往北坐到终点站（西安北站）。  
+<i class="i_bus"></i> 高铁 西安北-华山北。  
+<i class="i_bus"></i> 华山北站 打车到游客中心。  
+</div>
+<i class="i_bus"></i> 游客中心 坐进山小巴士到 西峰山脚。  
+<i class="i_wharf"></i> 西峰山脚坐缆车至西峰顶。  
+<i class="i_wan"></i> 西峰->南峰->东峰->北峰。  
+<i class="i_wharf"></i> 北峰顶坐缆车至北峰山脚。  
+<i class="i_bus"></i> 北峰山脚  坐进山小巴士到 游客中心。  
+<div class="cost" markdown='1'>
+<i class="i_bus"></i> 游客中心打车到华山北站。  
+<i class="i_bus"></i> 高铁 华山北-西安北。  
+<i class="i_bus"></i> 地铁2号线。  
+</div>
 
 ## D3 回家  
 
