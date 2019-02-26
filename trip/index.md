@@ -4,4 +4,5 @@ layout: default
 ---
 
 
-- 2018-12 [西安](/trip/2018-12-02 xi-an)
+- [西安攻略](/trip/xian)
+- 2018-12 [阳朔游记](/trip/yangshuo)

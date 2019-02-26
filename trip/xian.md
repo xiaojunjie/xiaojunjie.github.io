@@ -17,7 +17,15 @@ tags: 旅游
 
 ## 餐厅    
 
-这几家都是当地比较有名气的店，特别是前三。不过旺季可能要排队很久，特别是第一家，个人推荐第二家。   
+[长安大排档](https://www.dianping.com/search/keyword/17/10_%E9%95%BF%E5%AE%89%E5%A4%A7%E6%8E%92%E6%A1%A3){:target="\_dianping0"}、
+[袁家村](https://www.dianping.com/search/keyword/17/10_%E8%A2%81%E5%AE%B6%E6%9D%91%E5%85%B3%E4%B8%AD%E5%8D%B0%E8%B1%A1%E4%BD%93%E9%AA%8C%E5%9C%B0){:target="\_dianping1"}、
+[江城小馆](https://www.dianping.com/search/keyword/17/10_%E6%B1%9F%E5%9F%8E%E5%B0%8F%E9%A6%86){:target="\_dianping2"}、
+[遇见长安](https://www.dianping.com/search/keyword/17/10_%E9%81%87%E8%A7%81%E9%95%BF%E5%AE%89){:target="\_dianping3"}
+这几家都是当地比较有名气的店，不过旺季可能要排队很久，特别是第一家。
+<div class="cost" markdown='1'>
+<i class="i_t"></i>这里所推荐的都是西北菜，当然还有其他菜系的店也不错。
+</div>
+
 ![餐厅](/assets/dist/img/trip-xian-food.png)  
 
 ## D0 到达  
@@ -81,7 +89,7 @@ tags: 旅游
 <i class="i_din"></i>  博物馆负一层有小吃，价格稍贵点。  
 <i class="i_din"></i>  离博物馆500米左右，大雁塔小学旁边的**子午路张记**的肉夹馍比较出名。  
 ![陕西历史博物馆](/assets/dist/img/trip-xian-bowuguang.png)    
-<i class="i_din"></i>  午餐: 可以在[餐厅](#餐厅)列表中选择小寨附近的店，离博物馆就步行几分钟。如果去top1那家餐厅可以先取票然后再来博物馆，那家比较娇情要排很久。  
+<i class="i_din"></i>  午餐: 可以在[餐厅](#餐厅)列表中选择小寨附近的店，离博物馆就步行几分钟。如果去[长安大排档](#餐厅)可以先取票然后再来博物馆，那家比较娇情要排很久。  
 
 ### 13:00 兵马俑  
 
@@ -104,7 +112,7 @@ tags: 旅游
 <i class="i_t"></i> [兵马俑](#兵马俑)只是[秦始皇陵](#秦始皇陵)的陪葬坑，兵马俑出来有免费大巴去秦始皇陵，但不值得去，因为未开挖，就只是一土堆，虽然门票免费  
 </div>
 
-<i class="i_din"></i>  晚餐：个人推荐top2那家，家常菜，不贵  
+<i class="i_din"></i>  晚餐：如果想吃正餐，推荐江城小馆; 如果是想吃小吃，推荐袁家村，在大唐不夜城也有家分店，在下图起点处“银泰百货”。
 
 ### 19:00 大唐不夜城  
 
