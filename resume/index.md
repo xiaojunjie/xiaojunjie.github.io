@@ -9,9 +9,9 @@ username: 肖俊杰
 # pdf: 肖俊杰.pdf
 
 study-info:
-    base: 肖俊杰 / 男 / 24岁
+    base: 肖俊杰 / 男 / 25岁
     education0: 本科 / 西安电子科技大学 / 信息安全
-    education1: 研究生 / 西安电子科技大学 / 电路与系统
+    education1: 硕士 / 西安电子科技大学 / 电路与系统
     political: 共青团员
     native: 福建福州
     english: CET-6：507
@@ -43,7 +43,7 @@ project:
       content: 读完《深入理解计算机系统》(CSAPP)，对Web Server突然很有兴趣，把书中的demo不断地改进，加入线程池、路由器、异步日志模块等等，提高服务器的并发性，目前还在不断完善中。通过不断地造轮子，可以夯实自己的计算机基础。
       img:
       demo:
-      source: https://github.com/xiaojunjie/tiny
+#      source: https://github.com/xiaojunjie/tiny
 
     - title: 基于hadoop的学生上网行为分析（2015.6 - 2015.8）
       content: 我们团队参加中国大学生计算机设计大赛，命题为《基于hadoop的学生上网行为分析》。我是负责数据可视化创新设计，不拘泥于传统单调的图表，而是采用地图插件，使后端数据动态展现出来。在数据处理上，通过封装前端的数据接口，完美地实现了前后端对接。通过这个项目使我对大量数据的交互处理以及数据可视化有进一步了解。
@@ -64,31 +64,32 @@ project:
 #      source:
 
 program:
+    - language: C/C++
+      detail:
+        - 了解标准库各容器的实现及其操作的复杂度。
+        - 了解编译过程，熟悉处理器体系结构。
+
     - language: Python
       detail:
         - 能够应对大部分反爬策略，轻松地完成爬虫程序设计。
         - 能够利用pandas,numpy,matplotlib等完成基本的数据分析。
 
-    - language: JavaScript
-      detail:
-        - 基础扎实，熟悉闭包、原型链等高级特性。
-        - 有Ajax/json开发经验，熟悉接口规范。
-
 ComputerSystem:
-    - 扎实的计算机基础，特别是计算机组成原理。
+    - 计算机基础扎实，特别是计算机组成原理。
     - 懂得实现各种基础的数据结构和算法。
 
 development:
-    - 对于Web数据处理有一定的工程经验
-    - 对于MVC架构有一定的理解
+    - 了解HTTP协议，熟悉前后端接口规范和安全常识。
+    - 对于Web前端的数据处理有一定的工程经验。
+    - 喜爱LINUX/UNIX开发环境，熟悉基本操作。
 
 security:
     - 熟悉XSS、CSRF、ClickJacking等web安全相关技术
 
 competition:
-    - 2018届华为软件精英挑战赛·西北赛区二等奖
-    - 第26届中国大学生计算机设计大赛·全国二等奖
-    - 第25届“星火杯”大学生课外学术科技作品竞赛中获三等奖
+    - 2018-华为软件精英挑战赛·西北赛区二等奖
+    - 2015-第26届中国大学生计算机设计大赛·全国二等奖
+    - 2013-第25届“星火杯”大学生课外学术科技作品竞赛中获三等奖
 
 scholarship:
     - 2013~2014 校三等奖学金
