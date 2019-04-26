@@ -97,7 +97,7 @@ aside a {
   display: inline-block; }
   .exp p {
     font-size: 15px;
-    color: #616161;
+    color: #000;
     line-height: 22px;
     margin-bottom: 3px; }
   .exp > li {

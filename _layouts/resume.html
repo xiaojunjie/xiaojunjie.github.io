@@ -99,7 +99,7 @@ layout: compress
                 <li class="skill">
                     <dt><i class="icon-bookmark"></i>Skill. 基本技能</dt>
                     <div class="wrap">
-                        <h3>编程语言</h3>
+                        <h3>计算机基础</h3>
                         <ul class="exp">
                             {% for item in page.program %}
                             <li>
@@ -112,24 +112,36 @@ layout: compress
                         </ul>
                     </div>
                     <div class="wrap">
-                        <h3>其他</h3>
+                        <h3>工程实践</h3>
                         <ul class="exp">
                             <li>
                                 <div class="circle"></div>
-                                <h4>计算机基础</h4> {% for detail in page.ComputerSystem %}
+                                <h4>C++</h4> {% for detail in page.Cplusplus %}
                                 <p>{{ detail }}</p>
                                 {% endfor %}
                             </li>
                             <li>
                                 <div class="circle"></div>
-                                <h4>开发能力</h4> {% for detail in page.development %}
+                                <h4>JavaScript</h4> {% for detail in page.JavaScript %}
+                                <p>{{ detail }}</p>
+                                {% endfor %}
+                            </li>
+                            <li>
+                                <div class="circle"></div>
+                                <h4>Python</h4> {% for detail in page.Python %}
+                                <p>{{ detail }}</p>
+                                {% endfor %}
+                            </li>
+                            <li>
+                                <div class="circle"></div>
+                                <h4>Linux</h4> {% for detail in page.Linux %}
                                 <p>{{ detail }}</p>
                                 {% endfor %}
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="life">
+                <li class="life" hidden>
                     <dt><i class="icon-bookmark"></i>Life. 人生</dt>
                     <div class="wrap">
                         <h3>奖励</h3>
