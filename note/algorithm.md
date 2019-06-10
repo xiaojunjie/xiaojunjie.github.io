@@ -20,6 +20,7 @@ layout: cs
 - 689 3个子数组总和最小，先求1个，然后2个，再3个。dp[0][i]一个的情况下从i到endl要选哪个开始  
 - 718 共同出现的最长连续子数组，A[i]从右到左，B[j]从左到右，O(n^2), dp[j] = 1 + dp[j+1];  
 - 898 所有子数组内部“或”运算会有几个结果。unordered_set容器存结果，遍历数组内元素与容器“或”  
+- 368 两两互余的子数组。排序，遍历nums, 后推j，if(nums[j]%nums[i]==0 && dp[i] >= dp[j]) { dp[j]=dp[i]+1; prev[j]=i   }   最后找到dp[i]最大值往前推  
 
 
 ### 矩阵  
@@ -66,5 +67,28 @@ temp=rob;rob = nums[i]+pass; pass=max(pass,temp); 空间O(1)
 - 338 连续n个数中1出现的次数，ret[i] = ret[i&(i-1)] + 1;  
 - 343 将一个数拆成几个数相乘，最大乘积。dp[i] = max(dp[i-3]\*3, dp[i-2]\*2)  
 - 354 套信封。长从小到大，同长比宽从大到小。回朔j至0, if(j宽小于i宽) data[i] = max(data[i],data[j]); res=max(res,data[i])  
-- 368 两两互余的子数组。排序，遍历nums, 后推j，if(nums[j]%nums[i]==0 && dp[i] >= dp[j]) { dp[j]=dp[i]+1; prev[j]=i   }   最后找到dp[i]最大值往前推  
-- 376 波动Subsequence，flag记录上下趋势，res根据flag和num[i和i-1] 进行++
+- 376 波动Subsequence，flag记录上下趋势，res根据flag和num[i和i-1] 进行++  
+
+## 贪心  
+
+- 需要几间？结束时间推入最小堆  
+- 一人最多参加几个，按start排序，依次遍历，不能参加时如果结束时间还要早，替换上一场  
+
+- Gas Station: 前期不够先记在total，清空油箱继续遍历，一不够马上记到total，直到最后  
+
+- Candy : 左扫一遍，右扫一遍  
+  
+- Remove K Digits：  
+- Remove Duplicate Letters : 先推入到stack顶，遇到好的再推出  
+
+- Rearrange String k Distance Apart：间隔K问题，<int,char>推入大堆，以k为一周期，连pop k次，pop完后再推回  
+
+- 757 Intervals（start，end): 跟prev对比，prev可能是stack顶，也可以是堆顶  
+
+- IPO: n个项目利润，n个成本，从中选k个投资，本金w。先把能投资的先推入堆，赚钱后再推，每次都是从堆顶选  
+
+- 3个连续的分一组，思维不要局限于前面，要主动往后找  
+
+- 870 田忌赛马 sort(A) by multiset, B[i]比A最大rbegin还要大则选最小，或者选upper_bound  
+
+- 948 买或换，双指针  
