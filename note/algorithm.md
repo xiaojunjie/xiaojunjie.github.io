@@ -71,24 +71,24 @@ temp=rob;rob = nums[i]+pass; pass=max(pass,temp); 空间O(1)
 
 ## 贪心  
 
-- 需要几间？结束时间推入最小堆  
-- 一人最多参加几个，按start排序，依次遍历，不能参加时如果结束时间还要早，替换上一场  
+### 会议  
+- 252 一间能否满足所有会议。按start排序后比较。
+- 253 这些会议需要几间？最小堆存储end。遍历剩余会议，如果start小于堆顶只能新开房，也就是push end; 否则就先pop再push。
+- 一间最多安排几个会议，按start排序，依次遍历，不能参加时如果结束时间还要早，替换上一场  
 
-- Gas Station: 前期不够先记在total，清空油箱继续遍历，一不够马上记到total，直到最后  
+- 134 加油站 Station: 从0到n-1累加，当小于0时另起并记录当前位置，欠的后面要还上  
 
-- Candy : 左扫一遍，右扫一遍  
+- 135 分蛋糕: 左扫一遍，高分比低分多1，右扫一遍，高分到少多1, 即data[i]=max(data[i], data[i+1]+1)  
   
-- Remove K Digits：  
-- Remove Duplicate Letters : 先推入到stack顶，遇到好的再推出  
+- 402 数中删掉k位后变最小。for(num: nums) 回朔并pop str，直到遇到比num小的，push num to str
+- 316 删掉重复的字母，变最小。同上，遇到大的删掉再push自己，除非它后续没有了，所以要个计算器。
 
-- Rearrange String k Distance Apart：间隔K问题，<int,char>推入大堆，以k为一周期，连pop k次，pop完后再推回  
+- 358 间隔K问题，<int,char>推入大堆，以k为一周期，连pop k次，pop完后再推回  
 
-- 757 Intervals（start，end): 跟prev对比，prev可能是stack顶，也可以是堆顶  
+- 502 n个项目利润，n个成本，从中选k个投资，本金w。先把能投资的先推入堆，赚钱后再推，每次都是从堆顶选  
 
-- IPO: n个项目利润，n个成本，从中选k个投资，本金w。先把能投资的先推入堆，赚钱后再推，每次都是从堆顶选  
-
-- 3个连续的分一组，思维不要局限于前面，要主动往后找  
+- 3个连续的分一组，tail记录已分的组的尾数，if tail[num[i-1]], return false; else check num[i+1,+2].  
 
 - 870 田忌赛马 sort(A) by multiset, B[i]比A最大rbegin还要大则选最小，或者选upper_bound  
+  p = B[i]>=\*data.rbegin()? data.begin() : data.upper_bound(B[i]);  
 
-- 948 买或换，双指针  
