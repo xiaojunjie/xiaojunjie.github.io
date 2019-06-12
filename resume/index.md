@@ -40,9 +40,9 @@ intern:
 
 project:
     - title: 量子深度神经网络的研究与应用  (2018.5至今)
-      content: 我提出了一种方法可以使计算机针对不同的图像分类任务自动化构建CNN，其中的创新点于我提出的一种编码策略将整个CNN结构及其超参完全映射于量子粒子群优化算法（QPSO）的搜索空间中，通过QPSO的量子进化策略不断搜索CNN结构和参数，最终使计算机在无任何人工经验的干涉下以比较小的计算代价构建出一个比较好的CNN。
+      content: 基于量子粒子群算法(QPSO)，我提出了一种方法可以使计算机能自动化构建不同的卷积神经网络(CNN)来处理不同的图像分类任务，其中的创新点于全程无需人工经验的干涉，并且充分发挥了量子的不确定性以降低计算代价。
     - title: Tiny Web Server  (2017.9至今)
-      content: 生产者-消费者模式，主线程监听得到请求任务并推入队列，线程池的线程竞争提到任务后accpet请求，然后通过各种handler处理，最终响应请求。C++手动实现每个功能，包括日志、线程池、Http解析等等，无任何第三方库。通过不断地挖坑与填坑，可以夯实自己的计算机基础。
+      content: 本项目为C++11编写的Web服务器，使用了Reactor模式，基于事件驱动实现了线程的异步唤醒，使用状态机解析了get、head请求，可处理静态资源，并实现了异步日志，无任何第三方库。
       img:
       demo:
 #      source: https://github.com/xiaojunjie/tiny
@@ -104,10 +104,12 @@ Linux:
 security:
     - 熟悉XSS、CSRF、ClickJacking等web安全相关技术
 
-competition:
-    - 2018-华为软件精英挑战赛·西北赛区二等奖
-    - 2015-第26届中国大学生计算机设计大赛·全国二等奖
+competition0:
     - 2013-第25届“星火杯”大学生课外学术科技作品竞赛中获三等奖
+    - 2015-第26届中国大学生计算机设计大赛·全国二等奖
+
+competition1:
+    - 2018-华为软件精英挑战赛·西北赛区二等奖
 
 scholarship:
     - 2013~2014 校三等奖学金
@@ -116,4 +118,6 @@ scholarship:
 
 current: 我正在努力打好基础，我觉得扎实的基本功远比掌握一些技能重要。
 future: 我性格沉静，爱编程爱计算机。无论将来发展如何，我都希望自己能不忘初心。
+paper: Evolving Deep Convolutional Neural Networks by Quantum Behaved Particle Swarm Optimization with Binary Encoding for Image Classification, Neurocomputing, submitted.
+patent: 基于量子神经网络的手写体图片分类方法
 ---

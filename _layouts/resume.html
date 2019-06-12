@@ -141,38 +141,38 @@ layout: compress
                         </ul>
                     </div>
                 </li>
-                <li class="life" hidden>
-                    <dt><i class="icon-bookmark"></i>Life. 人生</dt>
+                <li class="life">
+                    <dt><i class="icon-bookmark"></i>Honour. 荣誉</dt>
                     <div class="wrap">
-                        <h3>奖励</h3>
+                        <h3>比赛</h3>
                         <ul class="exp">
                             <li>
                                 <div class="circle"></div>
-                                <h4>比赛</h4> {% for item in page.competition limit:5 %}
+                                <h4>本科</h4> {% for item in page.competition0 %}
                                 <p>{{ item }}</p>
                                 {% endfor %}
                             </li>
                             <li>
-                                <h4>学习</h4>
+                                <h4>研究生</h4>
                                 <div class="circle"></div>
-                                {% for item in page.scholarship limit:5 %}
+                                {% for item in page.competition1 %}
                                 <p>{{ item }}</p>
                                 {% endfor %}
                             </li>
                         </ul>
                     </div>
                     <div class="wrap">
-                        <h3>规划</h3>
-                        <ul class="exp">
+                        <h3>学习</h3>
+                        <ul class="exp" >
                             <li>
                                 <div class="circle"></div>
-                                <h4>目前</h4>
-                                <p>{{ page.current }}</p>
+                                <h4>专利</h4>
+                                <p>{{ page.patent }}</p>
                             </li>
                             <li>
                                 <div class="circle"></div>
-                                <h4>将来</h4>
-                                <p>{{ page.future }}</p>
+                                <h4>论文</h4>
+                                <p style="font-family: 'Times New Roman'">{{ page.paper }}</p>
                             </li>
                         </ul>
                     </div>

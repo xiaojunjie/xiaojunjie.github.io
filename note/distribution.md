@@ -66,43 +66,66 @@ BASE 要求最终一致性，通过牺牲强一致性来达到可用性，通常
 在实际的分布式场景中，不同业务单元和组件对一致性的要求是不同的，因此 ACID 和 BASE 往往会结合在一起使用。  
 
 ## Paxos  
+让参与分布式处理的每个参与者逐步达成一致意见  
 
-## Raft
+- 提议者  
+- 接受者  
+
+多对多关系，两个阶段： 
+
+- 准备：提议者群发序号，接受者群收并记录最大值max  
+- 接受：提议者群发[序号，内容]，对于某个接受者，若收到的序号 < max，否定，否则接收。 
+
+提议者从众，若在准备阶段被反馈有同人提议被接受，从之，若多人，从最大。  
+接受者从认序号，第二阶段才正式接受  
+[如何浅显易懂地解说 Paxos 的算法](https://www.zhihu.com/question/19787937)   
+
+- 可终止性： 从众  
+- 正确性：接受者只接收一个意见  
+
+## Raft  
+通过集群方式，为客户提供强一致、高可靠的数据服务  
+
+- 1个Leader n个Follower  
+- Leader接受客户端请求，并命令Follower一起来做  
+- 一半的以上回复OK才commint日志  
+- Leader一直发送心跳信息给Follower  
+- Follower等随机秒后收不到心跳就变为Candidate进行竞选，投自己，再拉票，一个一票  
+- 因为是随机秒，所以不会同时竞选，拉票信息随机延迟  
+- 票数过半为胜者，成Leader,其他为Follower  
+- Leader负责一致性检查，Follower要保证与其一致，否则将来竞选时可能被更新结点拒绝。  
 
 ## 实践    
 
-负载均衡的算法与实现
-加权最小连接
-DNS 
-MAC
-IP
-HTTP重定向
+### 负载均衡的算法与实现  
+- 加权最小连接  
+- DNS   
+- MAC  
+- IP  
+- HTTP重定向  
 
-分布式锁
-MySQL唯一索引，Redis的SETNX、EXPIRE
+### 分布式session  
+- 把client固定到server,一旦故障session全丢  
+- Session 复制，一旦变化就广播，优化方案（Terracotta只广播改动的部分）  
+- Memcached或数据库  
 
-分布式session
-把client固定到server,一旦故障session全丢
-Session 复制，一旦变化就广播，优化方案（Terracotta只广播改动的部分）
-Memcached或数据库
+### 高并发下的性能优化  
+- 调整项目结构，增加服务器资源，集群或分布式，负载均衡  
+- 数据库优化  
+- 代码优化（使用多线程+算法优化）  
+- 合理使用缓存  
+- html静态化，图片存于服务器  
 
-高并发下的性能优化
-1.调整项目结构，增加服务器资源，集群或分布式，负载均衡
-2.数据库优化
-3.代码优化（使用多线程+算法优化）
-4.合理使用缓存
-5.html静态化，图片存于服务器
+### 接口如何处理重复请求  
+- 前端 disable  
+- 后端 redis分布式锁  
 
-接口如何处理重复请求
-前端 disable
-后端 redis分布式锁
-
-接口限流
-计数器法，1分钟100，临界时间点
-滑动窗口，将时间细分为很多格，每过n秒向右移动n格
-漏桶算法，
-令牌桶算法
+### 接口限流  
+计数器法，1分钟100，临界时间点  
+滑动窗口，将时间细分为很多格，每过n秒向右移动n格  
+漏桶算法 
+令牌桶算法  
 
 
-分布式缓存
-https://github.com/crossoverJie/JCSprout/blob/master/MD/Cache-design.md
+### 分布式缓存  
+https://github.com/crossoverJie/JCSprout/blob/master/MD/Cache-design.md  
