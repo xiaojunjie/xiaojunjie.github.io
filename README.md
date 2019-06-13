@@ -1,6 +1,6 @@
 ### About
 
-可以在[这里](//xiaojunjie.github.io)预览。
+网页仅记录些笔记供自己查阅，可以在[这里](//xiaojunjie.github.io)预览。
 
 ### Usage
 
