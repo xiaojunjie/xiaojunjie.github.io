@@ -10,8 +10,8 @@ username: 肖俊杰
 
 study-info:
     base: 肖俊杰 / 男 / 25岁
-    education0: 本科 / 西安电子科技大学 / 信息安全
-    education1: 硕士 / 西安电子科技大学 / 电路与系统
+    education0: 2013-2017 本科 / 西安电子科技大学 / 信息安全
+    education1: 2017-2020 硕士 / 西安电子科技大学 / 电路与系统
     political: 共青团员
     native: 福建福州
     english: CET-6：507
