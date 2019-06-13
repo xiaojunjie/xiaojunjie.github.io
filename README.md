@@ -1,7 +1,6 @@
 ### About
 
-博客依靠 [Jekyll](//jekyllrb.com/) 新建. 可以在这里预览 [//xjjfly.com](//xjjfly.com) .
-风格上参照了 <https://herechen.github.io> .
+可以在[这里](//xiaojunjie.github.io)预览。
 
 ### Usage
 
@@ -20,7 +19,6 @@
 - gulp 依赖 nodejs, 所用插件需要本地安装
 
 #### 修改
-
 
 - `_config.yml` 中的账号信息
 -  `assets/src/js/douban.api.js` 中的豆瓣 api

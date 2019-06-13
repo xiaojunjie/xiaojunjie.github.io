@@ -30,7 +30,7 @@ intern:
 #      content: 海知智能(https://ruyi.ai)专注于人工智能交互系统，为客户提供自然语言理解和开放知识图谱的技术接口。我负责数据的爬取、清洗、入库工作，对各种反爬策略有深入的了解，能够处理复杂数据。最后还对爬虫框架进行改进，更好地满足公司的业务需求。
 #      img:
 #
-    - title: 北京-去哪儿网·Web工程师（2016.1 - 2016.2）
+    - title: 北京-去哪儿网·Web工程师（2016.1 - 2016.3）
       content: 在技术部实习两个月，参与“用户订单系统”维护和开发，主要是负责前端数据处理，用avalon重构前端模块，完成“用户订单系统”的升级。实习期间，我的编程能力能到了很大的提高，能够独立解决一些复杂的web工程问题。
       img:
 
@@ -119,5 +119,5 @@ scholarship:
 current: 我正在努力打好基础，我觉得扎实的基本功远比掌握一些技能重要。
 future: 我性格沉静，爱编程爱计算机。无论将来发展如何，我都希望自己能不忘初心。
 paper: Evolving Deep Convolutional Neural Networks by Quantum Behaved Particle Swarm Optimization with Binary Encoding for Image Classification, Neurocomputing, submitted.
-patent: 基于量子神经网络的手写体图片分类方法
+patent: 基于量子神经网络的手写体图片分类方法, 201910229053.3
 ---
