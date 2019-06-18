@@ -12,9 +12,9 @@ layout: compress
     <meta name="description" content="我是肖俊杰">
     <meta name="keywords" content="肖俊杰,xjjfly,前端,工作,简历,招聘">
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/resume.css">
-    <link rel="stylesheet" type="text/css" href="css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="/resume/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/resume/css/print.css">
+    <link rel="stylesheet" type="text/css" href="/resume/css/fontello.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@ layout: compress
                 <li class="basic-info">
                     <dt><i class="icon-bookmark"></i>Basic info. 基本信息</dt>
                     <div class="title">
-                        <img src="{{ page.face }}">
+                        <img src="/resume/{{ page.face }}">
                         <h1>{{ page.username }}</h1>
                         <h2>{{ page.job }}</h2>
                     </div>
@@ -54,7 +54,7 @@ layout: compress
                         <dd><i class="icon-wechat"></i>微信: <a href="#">{{ page.contact-info.wechat }}</a></dd>
                         <dd><i class="icon-qq"></i>Q&nbsp;Q: <a href="http://wpa.qq.com/msgrd?v=3&uin={{ page.contact-info.qq }}&site=qq&menu=yes" target="_blank">{{ page.contact-info.qq }}</a></dd>
                         <!--dd><i class="icon-plancast"></i>博客: <a href="//{{ page.contact-info.blog }}" target="_blank">{{ page.contact-info.blog }}</a></dd-->
-                        <!-- <dd><i class="icon-github-circled"></i>开源:<a href="//{{ page.contact-info.github }}" target="_blank">{{ page.contact-info.github }}</a></dd> -->
+                        <dd><i class="icon-github-circled"></i>开源:<a href="//{{ page.contact-info.github }}" target="_blank">{{ page.contact-info.github }}</a></dd> 
                     </div>
 
                 </li>
@@ -82,12 +82,13 @@ layout: compress
                                 <div class="circle"></div>
                                 <h4>{{ item.title }}
                                     {% if item.source %}
-                                        <a href="{{ item.source }}" target="_blank">源代码</a>
+                                    <a href="{{ item.source }}" target="_blank">源代码</a>
                                     {% endif %}
                                     {% if item.demo %}
                                         <a href="{{ item.demo }}" target="_blank">Demo</a>
                                     {% endif %}
                                 </h4>
+                                <p>{{ item.source }}</p>
                                 <p>{{ item.content }}</p>
                                 {% if item.img %}
                                 <img src="{{ item.img }}"> {% endif %}
