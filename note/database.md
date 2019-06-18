@@ -139,6 +139,8 @@ InnoDB 的 B+Tree 索引分为主索引(聚簇索引)和辅助索引
 - VARCHAR 变长  
 - DATETIME 时间string 8字节  
 - TIMESTAMP 时间int 4字节  
+- MyISAM 建议使用CHAR减少碎片  
+- InnoDB 建议使用VARCHAR减少空间  
 
 ### 概念  
 - 约束： 对某个字段的规则，保证数据的完整性。比如唯一约束要求每个字段都不同，像主键约束，但可以有一个NULL。  
