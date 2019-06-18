@@ -1,0 +1,190 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人简介</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="我是肖俊杰">
+    <meta name="keywords" content="肖俊杰,xjjfly,前端,工作,简历,招聘">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/resume/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/resume/css/print.css">
+    <link rel="stylesheet" type="text/css" href="/resume/css/fontello.css">
+</head>
+
+<body>
+    <aside>
+        <ul>
+            {% if page.pdf %}
+            <li>
+                <a href="{{ page.pdf }}" target="_blank">PDF 下载</a>
+            </li>
+            {% endif %}
+        </ul>
+    </aside>
+    <div class="container">
+        <div class="main">
+            <ul class="main-info">
+                <li class="basic-info">
+                    <dt><i class="icon-bookmark"></i>Basic info. 基本信息</dt>
+                    <div class="title">
+                        <img src="/resume/{{ page.face }}">
+                        <h1>{{ page.username }}</h1>
+                        <h2>{{ page.job }}</h2>
+                    </div>
+                    <div class="study-info">
+                        <dd><span>个人信息:</span> {{ page.study-info.base }}</dd>
+                        <dd><span>教育经历:</span> {{ page.study-info.education0 }}</dd>
+                        <dd><span>         </span> {{ page.study-info.education1 }}</dd>
+                        <dd><span>政治面貌:</span> {{ page.study-info.political }}</dd>
+
+                        <dd><span>籍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贯:</span> {{ page.study-info.native }}</dd>
+                        <dd><span>英语水平:</span> {{ page.study-info.english }}</dd>
+                        <!--<dd><span>成绩排名:</span> {{ page.study-info.score }}</dd>-->
+                    </div>
+
+                    <div class="contact-info">
+                        <dd><i class="icon-phone"></i>手机: {{ page.contact-info.phone }}</dd>
+                        <dd><i class="icon-mail"></i>邮箱: <a href="mailto:{{ page.contact-info.mail }}" target="_blank">{{ page.contact-info.mail }}</a></dd>
+                        <dd><i class="icon-wechat"></i>微信: <a href="#">{{ page.contact-info.wechat }}</a></dd>
+                        <dd><i class="icon-qq"></i>Q&nbsp;Q: <a href="http://wpa.qq.com/msgrd?v=3&uin={{ page.contact-info.qq }}&site=qq&menu=yes" target="_blank">{{ page.contact-info.qq }}</a></dd>
+                        <!--dd><i class="icon-plancast"></i>博客: <a href="//{{ page.contact-info.blog }}" target="_blank">{{ page.contact-info.blog }}</a></dd-->
+                        <dd><i class="icon-github-circled"></i>开源:<a href="//{{ page.contact-info.github }}" target="_blank">{{ page.contact-info.github }}</a></dd> 
+                    </div>
+
+                </li>
+                <li class="experience">
+                    <dt><i class="icon-bookmark"></i>Experience. 项目与工作经验</dt>
+                    <div class="wrap">
+                        <h3>实习经历</h3>
+                        <ul class="exp ">
+                            {% for item in page.intern limit:3 %}
+                            <li>
+                                <div class="circle"></div>
+                                <h4>{{ item.title }}</h4>
+                                <p>{{ item.content }}</p>
+                                {% if item.img %}
+                                <img src="{{ item.img }}"> {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="wrap">
+                        <h3>个人项目</h3>
+                        <ul class="exp">
+                            {% for item in page.project limit:3 %}
+                            <li>
+                                <div class="circle"></div>
+                                <h4>{{ item.title }}
+                                    {% if item.source %}
+                                    <a href="{{ item.source }}" target="_blank">源代码</a>
+                                    {% endif %}
+                                    {% if item.demo %}
+                                        <a href="{{ item.demo }}" target="_blank">Demo</a>
+                                    {% endif %}
+                                </h4>
+                                <p>{{ item.source }}</p>
+                                <p>{{ item.content }}</p>
+                                {% if item.img %}
+                                <img src="{{ item.img }}"> {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="skill">
+                    <dt><i class="icon-bookmark"></i>Skill. 基本技能</dt>
+                    <div class="wrap">
+                        <h3>计算机基础</h3>
+                        <ul class="exp">
+                            {% for item in page.program %}
+                            <li>
+                                <div class="circle"></div>
+                                <h4>{{ item.language }}</h4> {% for detail in item.detail %}
+                                <p>{{ detail }}</p>
+                                {% endfor %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="wrap">
+                        <h3>工程实践</h3>
+                        <ul class="exp">
+                            <li>
+                                <div class="circle"></div>
+                                <h4>C++</h4> {% for detail in page.Cplusplus %}
+                                <p>{{ detail }}</p>
+                                {% endfor %}
+                            </li>
+                            <li>
+                                <div class="circle"></div>
+                                <h4>JavaScript</h4> {% for detail in page.JavaScript %}
+                                <p>{{ detail }}</p>
+                                {% endfor %}
+                            </li>
+                            <li>
+                                <div class="circle"></div>
+                                <h4>Python</h4> {% for detail in page.Python %}
+                                <p>{{ detail }}</p>
+                                {% endfor %}
+                            </li>
+                            <li>
+                                <div class="circle"></div>
+                                <h4>Linux</h4> {% for detail in page.Linux %}
+                                <p>{{ detail }}</p>
+                                {% endfor %}
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="life">
+                    <dt><i class="icon-bookmark"></i>Honour. 荣誉</dt>
+                    <div class="wrap">
+                        <h3>比赛</h3>
+                        <ul class="exp">
+                            <li>
+                                <div class="circle"></div>
+                                <h4>本科</h4> {% for item in page.competition0 %}
+                                <p>{{ item }}</p>
+                                {% endfor %}
+                            </li>
+                            <li>
+                                <h4>研究生</h4>
+                                <div class="circle"></div>
+                                {% for item in page.competition1 %}
+                                <p>{{ item }}</p>
+                                {% endfor %}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="wrap">
+                        <h3>学习</h3>
+                        <ul class="exp" >
+                            <li>
+                                <div class="circle"></div>
+                                <h4>专利</h4>
+                                <p>{{ page.patent }}</p>
+                            </li>
+                            <li>
+                                <div class="circle"></div>
+                                <h4>论文</h4>
+                                <p style="font-family: 'Times New Roman'">{{ page.paper }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--footer>
+        <p>最后更新于{{ page.date }}</p>
+        <p>© XiaoJunjie | 闽ICP备15003719号</p>
+    </footer-->
+</body>
+
+</html>

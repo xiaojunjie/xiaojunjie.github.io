@@ -92,8 +92,50 @@ temp=rob;rob = nums[i]+pass; pass=max(pass,temp); 空间O(1)
 - 870 田忌赛马 sort(A) by multiset, B[i]比A最大rbegin还要大则选最小，或者选upper_bound
 p = B[i]>=\*data.rbegin()? data.begin() : data.upper_bound(B[i]);
 
+## 树  
+
+### 遍历  
+- 非递归inorder\_order 出栈后推右及右的所有左子孙  
+- 非递归pre\_order  出栈后先推右后推左  
+- 非递归post_oder 出栈后先把内容存入res, 先左后右推。reverse res。  
+- 层次遍历(涉及分行)。递归pre\_order,带行号。if(ret.size() == depth) 新加一行。
+- 宽度。同上，多带编号，子点编号为2n和2n+1
+
+### 验证  
+- BST 递归函数第2个参数prev等于先驱val，引用。先递归左，再验val, 若val大于prev则fail, 否则prev=val,验递归左。  
+- 对称，左右两子树同时进行层次遍历。  
 
 ## 经典
+
+### LRU  
+{% highlight C++ %}
+list<int> lru;
+unordered_map<int, pair<int, list<int>::iterator>> data;
+void change(int key){
+    lru.erase(data[key].second);
+    lru.push_front(key);                 
+}
+int get(int key) {
+    if(check(key)){
+       change(key);
+       data[key].second = lru.begin();
+       return data[key].first;
+    }
+    return -1;
+}
+int put(int key, int val){
+    if(!check(key)){
+        if(data.size()==_capacity){
+            data.erase(lru.back());
+            lru.pop_back();
+        }
+        lru.push_front(key);
+    }else{
+        change(key);
+    }
+    data[key] = {value, lru.begin()}
+}
+{% endhighlight %}
 
 ### 背包
 {% highlight C++ %}
