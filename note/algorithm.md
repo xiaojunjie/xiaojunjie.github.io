@@ -50,6 +50,10 @@ sell0=max(sell0,buy0+pices[i])
 - 322 最少需要几张零钱组成，完全背包最小值。dp={0, Max ...} dp[i] = min(dp[i], dp[i-coins[j]] + 1);
 - 416 能否分成sum相同的两组，01背包。price和weight都等于nums, 容量C为和一半
 
+### 排列组合  
+
+- 排列 sort(data.begin(), data.end()); prev_permutation(data.begin(), date.end());  
+- 组合 m选n。data={0,,1}; prev_permutation() 0选1不选。  
 
 ### 其他
 
@@ -114,11 +118,11 @@ unordered_map<int, pair<int, list<int>::iterator>> data;
 void change(int key){
     lru.erase(data[key].second);
     lru.push_front(key);                 
+    data[key].second = lru.begin();
 }
 int get(int key) {
     if(check(key)){
        change(key);
-       data[key].second = lru.begin();
        return data[key].first;
     }
     return -1;
@@ -130,10 +134,11 @@ int put(int key, int val){
             lru.pop_back();
         }
         lru.push_front(key);
+        data[key] = {value, lru.begin()}
     }else{
+        data[key].first = value;
         change(key);
     }
-    data[key] = {value, lru.begin()}
 }
 {% endhighlight %}
 
@@ -145,9 +150,7 @@ for(int j=0; j<weights.size(); j++){
     for(int i=weights[j]; i<=container; i++){
         if(i-weights[j]>=0)
             dp[i] = max(dp[i], dp[i-weights[j]]+prices[j]);
-
     }
-
 }
 {% endhighlight %}
 {% highlight C++ %}
@@ -157,9 +160,7 @@ for(int j=0; j<weights.size(); j++){
     for(int i=container; i>=weights[j]; i--){
         if(i-weights[j]>=0)
             dp[i] = max(dp[i], dp[i-weights[j]]+prices[j]);
-
     }
-
 }
 {% endhighlight %}
 {% highlight C++ %}
@@ -171,9 +172,7 @@ int n = weights.size();
 for(int i=0; i<n; i++){
     for(int j=weights[i]; j<=container; j++){
         dp[j] = min(dp[j], dp[j-weights[i]]+1);
-
     }
-
 }
 {% endhighlight %}
 
