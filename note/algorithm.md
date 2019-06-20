@@ -41,7 +41,7 @@ layout: cs
 sell1=max(sell1,buy1+pices[i])  
 buy1=max(buy1,sell0-pices[i])  
 sell0=max(sell0,buy0+pices[i])  
-=max(buy0,-pices[i]) // 不累计营利  
+buy0=max(buy0,-pices[i]) // 不累计营利  
 - 124 股票K次买卖 sell1和buy1展开k
 
 ### 背包
@@ -53,7 +53,7 @@ sell0=max(sell0,buy0+pices[i])
 ### 排列组合  
 
 - 排列 sort(data.begin(), data.end()); prev_permutation(data.begin(), date.end());  
-- 组合 m选n。data={0,,1}; prev_permutation() 0选1不选。  
+- 组合 m选n。data={0,,1}; prev_permutation() 1选0不选。  
 
 ### 其他
 
