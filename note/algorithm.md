@@ -8,7 +8,7 @@ layout: cs
 ### 回文
 
 - 5 最长的回文substring, 遍历n,以每个字符为中心，向首尾展开。 O(n^2)
-- 300 最长的回文Subsequence，步长s递增，data[i][i+s] = max(a,b,c)
+- 516 最长的回文Subsequence，步长s递增，data[i][i+s] = max(a,b,c)
 - 131 切成回文substring有哪几种切法，dfs(i:0->n) { check(i->n)回文，substr  }
 - 132 切成回文substring最少切几刀，向后传递，dp[i]=max(dp[i],dp[i-1]+1); dp[i+j]=min(dp[i+j],dp[i-1]+1)
 
@@ -37,11 +37,11 @@ layout: cs
 - 121 股票一次买卖 res = max(res, pices[i]-MIN); MIN = min(min,pices[i]);
 - 122 股票多次买卖 sell=max(sell,buy+pices[i]) buy=max(buy,sell-pices[i])
 - 309 股票多次买卖，停一天。buy[i+2] = max(buy[i+1], sell[i]-prices[i]); sell[i+2] = max(sell[i+1], buy[i+1]+prices[i]); prices[i]对应buysell的i+2
-- 123 股票两次买卖
-sell1=max(sell1,buy1+pices[i])
-buy1=max(buy1,sell0-pices[i])
-sell0=max(sell0,buy0+pices[i])
-=max(buy0,-pices[i]) // 不累计营利
+- 123 股票两次买卖  
+sell1=max(sell1,buy1+pices[i])  
+buy1=max(buy1,sell0-pices[i])  
+sell0=max(sell0,buy0+pices[i])  
+=max(buy0,-pices[i]) // 不累计营利  
 - 124 股票K次买卖 sell1和buy1展开k
 
 ### 背包
