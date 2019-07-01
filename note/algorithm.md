@@ -8,7 +8,7 @@ layout: cs
 ### 回文
 
 - 5 最长的回文substring, 遍历n,以每个字符为中心，向首尾展开。 O(n^2)
-- 300 最长的回文Subsequence，步长s递增，data[i][i+s] = max(a,b,c)
+- 516 最长的回文Subsequence，步长s递增，data[i][i+s] = max(a,b,c)
 - 131 切成回文substring有哪几种切法，dfs(i:0->n) { check(i->n)回文，substr  }
 - 132 切成回文substring最少切几刀，向后传递，dp[i]=max(dp[i],dp[i-1]+1); dp[i+j]=min(dp[i+j],dp[i-1]+1)
 
@@ -37,11 +37,11 @@ layout: cs
 - 121 股票一次买卖 res = max(res, pices[i]-MIN); MIN = min(min,pices[i]);
 - 122 股票多次买卖 sell=max(sell,buy+pices[i]) buy=max(buy,sell-pices[i])
 - 309 股票多次买卖，停一天。buy[i+2] = max(buy[i+1], sell[i]-prices[i]); sell[i+2] = max(sell[i+1], buy[i+1]+prices[i]); prices[i]对应buysell的i+2
-- 123 股票两次买卖
-sell1=max(sell1,buy1+pices[i])
-buy1=max(buy1,sell0-pices[i])
-sell0=max(sell0,buy0+pices[i])
-=max(buy0,-pices[i]) // 不累计营利
+- 123 股票两次买卖  
+sell1=max(sell1,buy1+pices[i])  
+buy1=max(buy1,sell0-pices[i])  
+sell0=max(sell0,buy0+pices[i])  
+buy0=max(buy0,-pices[i]) // 不累计营利  
 - 124 股票K次买卖 sell1和buy1展开k
 
 ### 背包
@@ -50,6 +50,10 @@ sell0=max(sell0,buy0+pices[i])
 - 322 最少需要几张零钱组成，完全背包最小值。dp={0, Max ...} dp[i] = min(dp[i], dp[i-coins[j]] + 1);
 - 416 能否分成sum相同的两组，01背包。price和weight都等于nums, 容量C为和一半
 
+### 排列组合  
+
+- 排列 sort(data.begin(), data.end()); prev_permutation(data.begin(), date.end());  
+- 组合 m选n。data={0,,1}; prev_permutation() 1选0不选。  
 
 ### 其他
 
@@ -114,11 +118,11 @@ unordered_map<int, pair<int, list<int>::iterator>> data;
 void change(int key){
     lru.erase(data[key].second);
     lru.push_front(key);                 
+    data[key].second = lru.begin();
 }
 int get(int key) {
     if(check(key)){
        change(key);
-       data[key].second = lru.begin();
        return data[key].first;
     }
     return -1;
@@ -130,10 +134,11 @@ int put(int key, int val){
             lru.pop_back();
         }
         lru.push_front(key);
+        data[key] = {value, lru.begin()}
     }else{
+        data[key].first = value;
         change(key);
     }
-    data[key] = {value, lru.begin()}
 }
 {% endhighlight %}
 
@@ -145,9 +150,7 @@ for(int j=0; j<weights.size(); j++){
     for(int i=weights[j]; i<=container; i++){
         if(i-weights[j]>=0)
             dp[i] = max(dp[i], dp[i-weights[j]]+prices[j]);
-
     }
-
 }
 {% endhighlight %}
 {% highlight C++ %}
@@ -157,9 +160,7 @@ for(int j=0; j<weights.size(); j++){
     for(int i=container; i>=weights[j]; i--){
         if(i-weights[j]>=0)
             dp[i] = max(dp[i], dp[i-weights[j]]+prices[j]);
-
     }
-
 }
 {% endhighlight %}
 {% highlight C++ %}
@@ -171,9 +172,7 @@ int n = weights.size();
 for(int i=0; i<n; i++){
     for(int j=weights[i]; j<=container; j++){
         dp[j] = min(dp[j], dp[j-weights[i]]+1);
-
     }
-
 }
 {% endhighlight %}
 
