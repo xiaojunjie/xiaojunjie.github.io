@@ -113,12 +113,31 @@ FIFO
 - 最佳适应度，对空闲区从小到大排序，小碎片多
 - 最坏适应度，从大到小排序，大空间少
 
+### 内存泄漏  
+- 堆内存泄漏 free  
+- 系统资源泄露 socketid  
+- 没有将基类的析构函数定义为虚函数  
+
 ### malloc  
-- 小于 128KB 时，在空闲琏表上查找（应该已经映射）。其底层是使用系统调用 sbrk，但 sbrk显然是栈操作，malloc是对其封吧。  
-- 大于 128 KB 的话，调用 mmap进行匿名页映射  
-- STL中的内存池思想与此相似，由n个琏表组成，初始长度为0，通过malloc申请一块大内存作为数据区。每个琏将由一些映射同大小内存空间（8,16,...）的结点串连而成。  
-- 当STL需要8byte空间的内存，先构造映射8byte内存的琏，长度尽量长但小于20，也就是先从数据区划分20x8内存出来造琏，取琏首return。当释放时再挂回琏。  
-- 数据区用光再malloc，malloc失败再拼凑空间，再失败就抛错。当STL所需要内存超过128直接malloc/free  
+[glibc内存管理ptmalloc源代码分析](https://paper.seebug.org/papers/Archive/refs/heap/glibc%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86ptmalloc%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90.pdf) 3.2    
+- 一个进程有1个主分配区(sbrk+mmap)+n个非主分配区(mmap), 环形相连。  
+- 线程首先要占区加锁，或开新区加锁。
+- 分配区通过sbrk批发128KB作heap(top chunk), (非主分配区是64MB)：  
+小于128KB且heap不够，sbrk(size)，堆区, 收缩时释放 
+大于128KB时，mmap，映射区. munmap释放  
+- sbrk和mmap都有映射，sbrk相当于精简版mmap    
+- 分配区零售给malloc，128条双向链表, 条每个结点是同大小的空闲块chunk    
+fast bins  
+small bins  
+fast bins -> unsorted\_bins  
+large bins(非精确)    
+top chunk  
+
+### STL分配器  
+- 由16个琏表组成，初始长度为0，通过malloc申请一块大内存作为内存池。每个琏将由一些映射同大小内存空间（8,16,...）的结点串连而成。  
+- 当STL需要8byte空间的内存，先构造映射8byte内存的琏，长度尽量长但小于20，也就是先从数据区划分20x8内存出来造琏，取琏首return(malloc时取尾)。当释放时再挂回琏。  
+- 数据区用光再malloc，malloc失败再拼凑空间，再失败就抛错  
+- 当STL所需要内存超过128bytes直接malloc/free  
 
 
 ## 异步  
@@ -131,4 +150,3 @@ FIFO
 - 异步非阻塞：系统会通知，你不要等  
 
 水壶（同步），响水壶（异步），阻塞（等），非阻塞（轮询）  
-select epoll 把同步封装成异步，（往水壶上加个口哨）

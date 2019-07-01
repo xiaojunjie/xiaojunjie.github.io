@@ -46,6 +46,7 @@ layout: cs
 滑动窗口动态调整大小  
 
 ###­拥塞控制   
+
 - 慢启:x2      
 - 拥塞避免: ++  
 - 快重传: count==3 || timeout   
@@ -69,7 +70,8 @@ listen某个端口后，这个端口的SYN队列和ACCEPT队列就弄好。1.1�
 SYN队満就丢弃新的，ACCEPT队列满了导致SYN出不来。  
 - int listen(int sockfd, int backlog);backlog是队列长度  
 - select  查找，1024, copy
-- [epoll](https://cloud.tencent.com/developer/article/1005481)  不查找，mmap, 中间件，ET/LT, ET要非阻塞  
+- [epoll](https://cloud.tencent.com/developer/article/1005481)  不查找，mmap, 中间件，ET/LT, ET要非阻塞   
+- LT vs ET: 兼容poll,编程方便,减少EAGAIN系统调用  
 
 
 ## HTTP  
