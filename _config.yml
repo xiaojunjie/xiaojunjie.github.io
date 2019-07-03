@@ -2,7 +2,7 @@
 markdown: kramdown 				# markdown parser(or rdiscount)
 permalink: /:categories/:title/	            # change default url
 safe: true         				# safe mode
-debug: false
+debug: true
 # paginate: 50					# number of posts on homepage
 truncate: 200 				# the number of words preview a post
 
