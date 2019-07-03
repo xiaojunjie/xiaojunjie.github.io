@@ -72,4 +72,5 @@ virtual含有默认参数也不要重载，virtual是多态，但默认参不是
 
 - 内置类型：数组定义在函数体外（数据段)，元素初始化为0；体内（函数栈）无初始化  
 - 类类型：无论在哪都调用该类的默认构造函数进行初始化  
-
+- 隐式类型转换：调用含参数构造，然后赋值构造  
+- RTTI: typeid(obj).name() typeid(obj0)==typeid(obj1) dynamic_cast转指针出错return 0,引用bad_cast异常
