@@ -4,6 +4,7 @@ layout: cs
 ---
 
 ## 事务  
+逻辑工作单元,包含一系列操作，满足ACID  
 
 ### ACID  
 原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）  
@@ -129,12 +130,11 @@ InnoDB 的 B+Tree 索引分为主索引(聚簇索引)和辅助索引
 ## 其他  
 
 #### InnoDB和MyISAM
-- 事务：InnoDB 是事务型的，可以使用 Commit 和 Rollback 语句。  
-- 并发：MyISAM 只支持表级锁，而 InnoDB 还支持行级锁。  
-- 外键：InnoDB 支持外键。  
-- 备份：InnoDB 支持在线热备份。  
-- 崩溃恢复：MyISAM 崩溃后发生损坏的概率比 InnoDB 高很多，而且恢复的速度也更慢。  
-- 其它特性：MyISAM 支持压缩表和空间数据索引。  
+- 事务：MyISAM不支持事务和外键，InnoDB 是事务型的，可以使用 Commit 和 Rollback 语句。  
+- 锁：MyISAM 只支持表级锁，而InnoDB还支持行级锁（where主键）。  
+- 行数保存: MyISAM  
+- 索引：MyISAM索引和数据分开，可压缩，支持全文索引; InnoDB有缓存池  
+- 备份：InnoDB必须导出SQL来备份，MyISAM的数据是以文件的形式存储，跨平台方便   
 
 ### 数据类型
 - DECIMAL(18, 9) 18总长9小数  

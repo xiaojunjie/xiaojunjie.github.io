@@ -45,6 +45,7 @@ Rect::Rect:text("asd") // 直接构造函数进行初始化
 - 函数指针 int (\*p)(int);  
 - 函数指针数组 int (\*p[10])(int);  
 - char a[5][6]; sizeof(a)==30, sizeof(a+0)==8  
+- nullptr 能够转换成其他类型的指针，NULL是宏定义0(int)，重载时可能出错  
 
 ### 智能指针  
 - auto_ptr指针 a=b;此时b为被置空  

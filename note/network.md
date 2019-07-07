@@ -5,22 +5,22 @@ layout: cs
 
 ## 七层模型简述  
 
-###  应用层  
+###  应用层(APDU)  
 - DHCP(udp):ip地址分配  
 - DNS(udp)www→ ip   
 - ping，在icmp中藏有当前时间，目标主机原物返回，相减  
 - Traceroute， 递增TTL发包，端口不可达，开始时一直收超时包，直到收到端口不可达说明到目的地了  
 
-### 表示层  
-加密解密压缩  
+### 表示层(PPDU)  
+加密解密压缩 JPEG ASII  
 
-### 会话层  
-进程间数据传输的建立恢复  
+### 会话层(SPDU)  
+进程间数据传输的建立恢复, RPC NFS  
 
-### 传输层  
+### 传输层(报文)  
 端到端，一台主机上的进程发出的包，如何到达目的主机上的某个进程。  
 
-### 网络层  
+### 网络层(包)  
 每一个网络分组如何到达目的主机，而不管目的主机如何处理。  
 - ARP:ip→ mac   
 - RARP:mac→ ip  
@@ -28,7 +28,7 @@ layout: cs
 - ICMP:  ip不可靠，需要ICMP帮忙，网络通不通，报文是否可达  
 - A 0  B10 C110 D1110 E1111  
 
-### 链路层  
+### 链路层(帧)
 - 目的mac-源mac-协议类型-数据，以太网内网络包的传输。  
 - VPN协议，交换器switch 基于MAC识别  
 - 交换式以太网特点a) 扩展了网络带宽。b) 分割了网络冲突域   
@@ -37,15 +37,18 @@ layout: cs
 - 后退N(GBN) ，类似指令流水，不一定等待前一条执行完才到下一条。只计时第一个，超时整个size重发。size=n对1 。n=2^k-1  
 - 选择重发 ，计时整个size，接收端非按序拿到包，缓存。包中要含有序号才能排序。Size = 2^(k-1)  超出size后接收端难区分新旧包  
 
-### 物理层  
-集线器hub 
+### 物理层(bit)  
+集线器hub, IEE802.3 CLOCK RJ45 
 
 ## TCP  
+
+### 序列号、确认应答、超时重传
 
 ### 流量控制  
 滑动窗口动态调整大小  
 
 ###­拥塞控制   
+
 - 慢启:x2      
 - 拥塞避免: ++  
 - 快重传: count==3 || timeout   
@@ -69,7 +72,8 @@ listen某个端口后，这个端口的SYN队列和ACCEPT队列就弄好。1.1�
 SYN队満就丢弃新的，ACCEPT队列满了导致SYN出不来。  
 - int listen(int sockfd, int backlog);backlog是队列长度  
 - select  查找，1024, copy
-- [epoll](https://cloud.tencent.com/developer/article/1005481)  不查找，mmap, 中间件，ET/LT, ET要非阻塞  
+- [epoll](https://cloud.tencent.com/developer/article/1005481)  不查找，mmap, 中间件，ET/LT, ET要非阻塞   
+- LT vs ET: 兼容poll,编程方便,减少EAGAIN系统调用  
 
 
 ## HTTP  
@@ -89,6 +93,7 @@ SYN队満就丢弃新的，ACCEPT队列满了导致SYN出不来。
 - 单个文件ftp,多个http快  
 
 ### HTTPS  
+server把公钥给ca认证后拿到证书给client, ca给server时要用ca自己的私钥给证书加密附在证书尾  
 RSA  
 N = 3x5, r=欧拉(2)x欧拉(4)=1x2，选择e(=1) <r，er互质，d=e关于r的逆元  
 (N,e) 公  
