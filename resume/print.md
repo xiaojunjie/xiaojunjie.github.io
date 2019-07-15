@@ -117,6 +117,6 @@ scholarship:
 
 current: 我正在努力打好基础，我觉得扎实的基本功远比掌握一些技能重要。
 future: 我性格沉静，爱编程爱计算机。无论将来发展如何，我都希望自己能不忘初心。
-paper: Evolving Deep Convolutional Neural Networks by Quantum Behaved Particle Swarm Optimization with Binary Encoding for Image Classification, Neurocomputing, submitted.
+paper: Evolving Deep Convolutional Neural Networks by Quantum Behaved Particle Swarm Optimization with Binary Encoding for Image Classification, Neurocomputing, accepted.
 patent: 基于量子神经网络的手写体图片分类方法, 201910229053.3
 ---

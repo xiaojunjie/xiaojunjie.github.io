@@ -71,9 +71,40 @@ layout: cs
 listen某个端口后，这个端口的SYN队列和ACCEPT队列就弄好。1.1步骤客户端的SYN包到达了服务器后，内核会把这一信息放到SYN队列（即未完成握手队列）中，同时回一个SYN+ACK包给客户端。一段时间后，2.1步骤中客户端再次发来了针对服务器SYN包的ACK网络分组时，内核会把连接从SYN队列中取出，再把这个连接放到ACCEPT队列（即已完成握手队列）中。而服务器在第3步调用accept时，其实就是直接从ACCEPT队列中取出已经建立成功的连接套接字而已.
 SYN队満就丢弃新的，ACCEPT队列满了导致SYN出不来。  
 - int listen(int sockfd, int backlog);backlog是队列长度  
-- select  查找，1024, copy
-- [epoll](https://cloud.tencent.com/developer/article/1005481)  不查找，mmap, 中间件，ET/LT, ET要非阻塞   
-- LT vs ET: 兼容poll,编程方便,减少EAGAIN系统调用  
+
+### select  
+- fds拷到内核，对监听的所有fd创建共同的wait_entry(callback)（for当前进程，一个fd有多个wait_entry from processes）  
+- 遍历一遍fds后调用schedule_timeout等待被唤醒  
+- 有事件时被callback唤醒（wait_entry会被移除），遍历收集再return。超时时被计算器回调唤醒    
+{% highlight C++ %}
+copy(fds);
+create wait_entry(callback) for fds;
+for(;;){
+    for(fd:fds);
+    poll_schedule_timeout();// 被计算器回调唤醒, 或callback唤醒
+}
+{% endhighlight %}
+
+### epoll  
+- fds通过共享内存(mmap)常驻  
+- epoll_ctl(ADD) 对fd创建wait_entry_sk(callback)，并加入sleep_list中  
+- epoll_wait 遍历ready_list后，将callback放入single_epoll_wait_list，调用schedule_timeout等待被唤醒  
+- 有事件时wait_entry_sk将fd放入ready_list（wait_entry_sk会被移除），并调用single_epoll_wait_list里面的callback去遍历ready_list收集返回，callback会被移除。  
+- epoll_wait.ET 一进来ready_list不空肯定有事件(IN)，收集后立即删除。  
+- epoll_wait.LT 一进来ready_list不空可能没有事件，可能是上次遗留（每次收集会重新入队），此时才真正去除，然后等待被唤醒   
+- [LT vs ET](https://cloud.tencent.com/developer/article/1005481): 兼容poll,编程方便,减少EAGAIN系统调用  
+
+### write  
+- 接收端receive buffer满了，通过流控和差控阻止发送端发送  
+- 阻塞模式下，发送端等到send buffer足够时才回返; 如果接收端close，能填多少是多少，return填的量，再次write时 connection reset by peer  
+- 非阻塞模式下，return -1, EAGAIN  
+- 收到对方的FIN仅意味着对方不会再send  
+
+### RST  
+当一端进程异常退出时，OS会代发FIN，当再收到消息时会以RST回应，对方面对RST若再发就会被其OS的SIGPIPE（停止）   
+- 建立连接的SYN到达某端口，但是该端口上没有正在 监听的服务。  
+- TCP收到了一个根本不存在的连接上的分节。  
+- 请求超时。 使用setsockopt的SO_RCVTIMEO选项设置recv的超时时间。接收数据超时时，会发送RST包   
 
 
 ## HTTP  

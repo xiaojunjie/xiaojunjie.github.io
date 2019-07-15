@@ -49,6 +49,7 @@ buy0=max(buy0,-pices[i]) // 不累计营利
 - 279 最少需要几个平方数组成 data[i] = min(data[i], data[i-j\*j]+1);     j = 1->sqrt(i);
 - 322 最少需要几张零钱组成，完全背包最小值。dp={0, Max ...} dp[i] = min(dp[i], dp[i-coins[j]] + 1);
 - 416 能否分成sum相同的两组，01背包。price和weight都等于nums, 容量C为和一半
+- 377 组成某个数的排列有几种。完全背包计数, dp[i] += dp[i-nums[j]];
 
 ### 排列组合  
 
@@ -62,12 +63,11 @@ buy0=max(buy0,-pices[i]) // 不累计营利
 - 96 n个结点的BST有几种组合，遍历nums[i], for(j=i->0) dp[j] = dp[j+1] + dp[j-1], sum(dp)
 - 95 n个结点的BST有哪几种组合，遍历nums[i]，(1)nums[i]当head; (2)nums[i]插入右侧.
 - 139 句子能否有那几个单词组成。遍历每个字母确定其步长，能否从头走到尾巴，可以从尾逆推到头。
-- 198 偷盗相邻报警，dp[i+3] = nums[i] + max(dp[i],dp[i+1]); 空间O(n).
+- 198 偷盗相邻报警，dp[i+3] = nums[i] + max(dp[i],dp[i+1]); 空间O(n).  
 temp=rob;rob = nums[i]+pass; pass=max(pass,temp); 空间O(1)
 - 213 房子环形，max(rob(0,n-1),rob(1,n)), rob是上面函数
 - 264 丑数 data[i] = min(data[k2]\*2, data[k3]\*3, data[k5]\*5 );  k++
 - 削掉一个数，左中右积。dp[i][j] = max(dp[i][j], 左中右积+data[i][中]+data[中][i])
-- 377 组成某个数的排列有几种。回朔, dp[i] += dp[i-nums[j]];
 - 338 连续n个数中1出现的次数，ret[i] = ret[i&(i-1)] + 1;
 - 343 将一个数拆成几个数相乘，最大乘积。dp[i] = max(dp[i-3]\*3, dp[i-2]\*2)
 - 354 套信封。长从小到大，同长比宽从大到小。回朔j至0, if(j宽小于i宽) data[i] = max(data[i],data[j]); res=max(res,data[i])
