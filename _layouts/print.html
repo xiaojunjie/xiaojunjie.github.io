@@ -84,11 +84,15 @@ layout: compress
                                     {% if item.source %}
                                     <a href="{{ item.source }}" target="_blank">源代码</a>
                                     {% endif %}
+                                    {% if item.link %}
+                                    <a href="{{ item.link }}" target="_blank">链接</a>
+                                    {% endif %}
                                     {% if item.demo %}
                                         <a href="{{ item.demo }}" target="_blank">Demo</a>
                                     {% endif %}
                                 </h4>
                                 <p>{{ item.source }}</p>
+                                <p>{{ item.link }}</p>
                                 <p>{{ item.content }}</p>
                                 {% if item.img %}
                                 <img src="{{ item.img }}"> {% endif %}

@@ -40,6 +40,8 @@ intern:
 project:
     - title: 量子深度神经网络的研究与应用  (2018.5至今)
       content: 基于量子粒子群算法(QPSO)，我提出了一种新的编码方式将卷积神经网络(CNN)映射于QPSO的搜索空间中，通过改进的量子搜索策略使计算机能快速地自动化构建合适的CNN结构来处理不同的图像分类任务，其中的创新点于全程无需人工经验的干涉，并且充分发挥了量子的不确定性以降低计算代价。这是第一个用粒子群算法来构建CNN结构的完全自动化算法。
+      link: https://doi.org/10.1016/j.neucom.2019.07.026
+
     - title: Tiny Web Server  (2017.9至今)
       content: 本项目为C++11编写的轻量级Web服务器，在不依赖第三方库的情况下实现基础的功能，包括使用有限状态机解析get请求，处理静态资源，实现异步日志，等等。主线程负责accept请求，线程池负责处理，线程皆基于Reactor模式，使用Epoll水平触发的IO多路复用技术，将阻塞点放在监控socket的epoll_wait调用上，通过事件驱动实现了线程的异步唤醒。
       img:
@@ -117,6 +119,6 @@ scholarship:
 
 current: 我正在努力打好基础，我觉得扎实的基本功远比掌握一些技能重要。
 future: 我性格沉静，爱编程爱计算机。无论将来发展如何，我都希望自己能不忘初心。
-paper: Evolving Deep Convolutional Neural Networks by Quantum Behaved Particle Swarm Optimization with Binary Encoding for Image Classification, Neurocomputing, 2019, 10.1016/j.neucom.2019.07.026.
+paper: Yangyang Li and Junjie Xiao et al. Evolving Deep Convolutional Neural Networks by Quantum Behaved Particle Swarm Optimization with Binary Encoding for Image Classification, Neurocomputing, 2019, 10.1016/j.neucom.2019.07.026.
 patent: 基于量子神经网络的手写体图片分类方法, 201910229053.3
 ---
